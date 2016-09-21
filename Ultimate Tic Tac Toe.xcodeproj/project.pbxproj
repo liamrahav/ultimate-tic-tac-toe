@@ -11,8 +11,8 @@
 		FA7AF6E11D92C41300BDFCD6 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA7AF6E01D92C41300BDFCD6 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA7AF6E61D92C41300BDFCD6 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7AF6E51D92C41300BDFCD6 /* Messages.framework */; };
 		FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */; };
-		FA7AF6EC1D92C41300BDFCD6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6EA1D92C41300BDFCD6 /* MainInterface.storyboard */; };
 		FA7AF6EE1D92C41300BDFCD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */; };
+		FA7AF6FC1D92CA4A00BDFCD6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,9 @@
 		FA7AF6E01D92C41300BDFCD6 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7AF6E51D92C41300BDFCD6 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		FA7AF6EB1D92C41300BDFCD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7AF6EF1D92C41300BDFCD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +102,8 @@
 		FA7AF6E71D92C41300BDFCD6 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */,
 				FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */,
-				FA7AF6EA1D92C41300BDFCD6 /* MainInterface.storyboard */,
 				FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */,
 				FA7AF6EF1D92C41300BDFCD6 /* Info.plist */,
 			);
@@ -202,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7AF6EE1D92C41300BDFCD6 /* Assets.xcassets in Resources */,
-				FA7AF6EC1D92C41300BDFCD6 /* MainInterface.storyboard in Resources */,
+				FA7AF6FC1D92CA4A00BDFCD6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,17 +226,6 @@
 			targetProxy = FA7AF6E21D92C41300BDFCD6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FA7AF6EA1D92C41300BDFCD6 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA7AF6EB1D92C41300BDFCD6 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FA7AF6F01D92C41300BDFCD6 /* Debug */ = {
@@ -405,6 +394,7 @@
 				FA7AF6F41D92C41300BDFCD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA7AF6F61D92C41300BDFCD6 /* Build configuration list for PBXNativeTarget "Ultimate Tic Tac Toe" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +403,7 @@
 				FA7AF6F81D92C41300BDFCD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

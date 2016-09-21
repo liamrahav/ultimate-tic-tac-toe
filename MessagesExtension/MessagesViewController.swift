@@ -10,10 +10,18 @@ import UIKit
 import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
+    let label = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        label.text = "Hello World"
+        view.addSubview(label)
+        updateViewConstraints()
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
     }
     
     override func didReceiveMemoryWarning() {
