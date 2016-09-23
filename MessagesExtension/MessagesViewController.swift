@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+import SnapKit
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -19,12 +20,13 @@ class MessagesViewController: MSMessagesAppViewController {
 
         label.text = "I'am a test label"
         view.addSubview(label)
+        label.snp.makeConstraints { (make) -> Void in
+            make.center.equalTo(view)
+        }
         
         }
     
-    func createMessage() {
-        
-    }
+
     
 
     
