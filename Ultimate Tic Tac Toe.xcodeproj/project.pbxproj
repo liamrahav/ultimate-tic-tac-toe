@@ -18,6 +18,7 @@
 		FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE1291D9BFE9600A125FE /* Tile.swift */; };
 		FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */; };
 		FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12D1D9BFEC200A125FE /* Grid.swift */; };
+		FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FADFE1291D9BFE9600A125FE /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGround.swift; sourceTree = "<group>"; };
 		FADFE12D1D9BFEC200A125FE /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MSMessageTemplateLayout+Initializer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		FA7AF6E71D92C41300BDFCD6 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				FADFE12F1D9C033E00A125FE /* Message */,
 				FADFE1281D9BFE7B00A125FE /* Models */,
 				FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */,
 				FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */,
@@ -156,6 +159,14 @@
 				FADFE12D1D9BFEC200A125FE /* Grid.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FADFE12F1D9C033E00A125FE /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 				FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */,
 				FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */,
 				FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */,
+				FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */,
 				FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

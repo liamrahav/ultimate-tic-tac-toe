@@ -9,3 +9,7 @@ custom_categories:
     - BattleGround
     - Grid
     - Tile
+  - name: Message Logic
+    children:
+    - MSMessageTemplateLayout
+

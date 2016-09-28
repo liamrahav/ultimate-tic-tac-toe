@@ -21,7 +21,6 @@ class MessagesViewController: MSMessagesAppViewController {
         view.addSubview(label)
         label.snp.makeConstraints { (make) -> Void in
             make.center.equalTo(view)
-
         }
     }
     

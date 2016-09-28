@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Grid Class Reference</title>
+    <title>MSMessageTemplateLayout Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Grid" class="dashAnchor"></a>
-    <a title="Grid Class Reference"></a>
+    <a name="//apple_ref/swift/Extension/MSMessageTemplateLayout" class="dashAnchor"></a>
+    <a title="MSMessageTemplateLayout Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (76% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Grid Class Reference
+        MSMessageTemplateLayout Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -54,21 +54,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Grid</h1>
+            <h1>MSMessageTemplateLayout</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Grid</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MSMessageTemplateLayout</span> <span class="p">:</span> <span class="kt">MSMessageLayout</span></code></pre>
 
                 </div>
               </div>
-            <p>This class refers to the main game grid. It contains a 2-D array of smaller grids, called <code><a href="../Classes/BattleGround.html">BattleGround</a></code>s</p>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    The <code>battleGrounds</code> array is not mutable. This is because each <code><a href="../Classes/BattleGround.html">BattleGround</a></code> is unique and does not need to change.
-
-</div>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -76,9 +69,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC17MessagesExtension4GridcFT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC17MessagesExtension4GridcFT_S0_">init()</a>
+                    <a name="/s:FE17MessagesExtensionCSo23MSMessageTemplateLayoutcFT5imageCSo7UIImage7captionSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(image:caption:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE17MessagesExtensionCSo23MSMessageTemplateLayoutcFT5imageCSo7UIImage7captionSS_S0_">init(image:caption:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -86,14 +79,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This initializer instantiates a <code>Grid</code> object filled with 9 <code>BattleGrounds</code>, which in turn are each filled with 9 <code>.empty</code> <code><a href="../Enums/Tile.html">Tile</a></code>s</p>
+                        <p>This initializer takes in an image and a caption and returns a properly set <code>MSMessageTemplateLayout</code></p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This convenience initializer is declared in an extension.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">caption</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
