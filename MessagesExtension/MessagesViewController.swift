@@ -14,7 +14,6 @@ class MessagesViewController: MSMessagesAppViewController {
     
     let label = UILabel()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,13 +21,9 @@ class MessagesViewController: MSMessagesAppViewController {
         view.addSubview(label)
         label.snp.makeConstraints { (make) -> Void in
             make.center.equalTo(view)
-        }
-        
-        }
-    
 
-    
-
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

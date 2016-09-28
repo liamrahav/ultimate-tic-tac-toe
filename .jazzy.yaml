@@ -1,0 +1,11 @@
+author: Liam Rahav & Luke LaScala
+copyright: © 2016 Liam Rahav & Luke LaScala All Rights Reserved
+min_acl: private
+skip_undocumented: true
+
+custom_categories:
+  - name: Game Logic
+    children:
+    - BattleGround
+    - Grid
+    - Tile

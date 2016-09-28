@@ -15,6 +15,9 @@
 		FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */; };
 		FA7AF6EE1D92C41300BDFCD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */; };
 		FA7AF6FC1D92CA4A00BDFCD6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */; };
+		FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE1291D9BFE9600A125FE /* Tile.swift */; };
+		FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */; };
+		FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12D1D9BFEC200A125FE /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7AF6EF1D92C41300BDFCD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		FADFE1291D9BFE9600A125FE /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGround.swift; sourceTree = "<group>"; };
+		FADFE12D1D9BFEC200A125FE /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +139,23 @@
 		FA7AF6E71D92C41300BDFCD6 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				FADFE1281D9BFE7B00A125FE /* Models */,
 				FA7AF6FB1D92CA4A00BDFCD6 /* MainInterface.storyboard */,
 				FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */,
 				FA7AF6ED1D92C41300BDFCD6 /* Assets.xcassets */,
 				FA7AF6EF1D92C41300BDFCD6 /* Info.plist */,
 			);
 			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		FADFE1281D9BFE7B00A125FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FADFE1291D9BFE9600A125FE /* Tile.swift */,
+				FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */,
+				FADFE12D1D9BFEC200A125FE /* Grid.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */,
 				FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */,
+				FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */,
+				FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

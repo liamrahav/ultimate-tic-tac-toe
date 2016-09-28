@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Game Logic  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Game Logic  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (72% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Game Logic  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Game Logic.html">Game Logic</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/BattleGround.html">BattleGround</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Grid.html">Grid</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Tile.html">Tile</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Game Logic</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C17MessagesExtension12BattleGround"></a>
+                    <a name="//apple_ref/swift/Class/BattleGround" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C17MessagesExtension12BattleGround">BattleGround</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as <code>BattleGround</code>s. Each of these grids contains a 2-D array of <code><a href="Enums/Tile.html">Tile</a></code>s, which can be claimed by either player</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The <code>tiles</code> variable is mutable
+
+</div>
+
+                        <a href="Classes/BattleGround.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BattleGround</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C17MessagesExtension4Grid"></a>
+                    <a name="//apple_ref/swift/Class/Grid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C17MessagesExtension4Grid">Grid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class refers to the main game grid. It contains a 2-D array of smaller grids, called <code><a href="Classes/BattleGround.html">BattleGround</a></code>s</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The <code>battleGrounds</code> array is not mutable. This is because each <code><a href="Classes/BattleGround.html">BattleGround</a></code> is unique and does not need to change.
+
+</div>
+
+                        <a href="Classes/Grid.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Grid</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O17MessagesExtension4Tile"></a>
+                    <a name="//apple_ref/swift/Enum/Tile" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O17MessagesExtension4Tile">Tile</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This enum represents the different states that each indivudal tile within a battleground can have.</p>
+
+                        <a href="Enums/Tile.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Tile</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 Liam Rahav &amp; Luke LaScala All Rights Reserved</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
