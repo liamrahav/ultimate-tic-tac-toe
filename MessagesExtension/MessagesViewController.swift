@@ -12,15 +12,38 @@ import SnapKit
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    let label = UILabel()
+    var needsUpdateContraints = true
+
+    let button: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Start New Game", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        return button
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.text = "I'am a test label"
-        view.addSubview(label)
-        label.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(view)
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(startGame)))
+        view.addSubview(button)
+        
+        updateViewConstraints()
+    }
+    
+    func startGame() {
+        print("booyah")
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        if (needsUpdateContraints) {
+            button.snp.makeConstraints { (make) -> Void in
+                make.center.equalTo(view)
+            }
+            
+            needsUpdateContraints = false
         }
     }
     
