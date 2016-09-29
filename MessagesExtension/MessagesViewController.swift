@@ -12,53 +12,61 @@ import SnapKit
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    var needsUpdateContraints = true
-
-    let button: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.setTitle("Start New Game", for: .normal)
-        button.setTitleColor(.red, for: .normal)
-        return button
-    }()
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(startGame)))
-        view.addSubview(button)
+    // The flow for this function was taken from Apple's Ice Cream Builder example
+    func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
+        let controller: UIViewController
         
-        updateViewConstraints()
-    }
-    
-    func startGame() {
-        print("booyah")
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        if (needsUpdateContraints) {
-            button.snp.makeConstraints { (make) -> Void in
-                make.center.equalTo(view)
-            }
+        if (presentationStyle == .compact) {
+            controller = instantiateInitialViewController()
+        } else {
+            // TODO: - Show the actual game screen
             
-            needsUpdateContraints = false
+            // Temp
+            controller = UIViewController()
         }
+        
+        // Remove all children from the view
+        for childViewController in childViewControllers {
+            childViewController.willMove(toParentViewController: nil)
+            childViewController.view.removeFromSuperview()
+            childViewController.removeFromParentViewController()
+        }
+        
+        // Embed the new controller
+        addChildViewController(controller)
+        
+        controller.view.frame = view.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        controller.didMove(toParentViewController: self)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func instantiateInitialViewController() -> UIViewController {
+        let controller = InitialViewController()
+        // Add properties as needed here
+        return controller
     }
     
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
-        // Called when the extension is about to move from the inactive to active state.
-        // This will happen when the extension is about to present UI.
+        super.willBecomeActive(with: conversation)
         
-        // Use this method to configure the extension and restore previously stored state.
+        presentViewController(for: conversation, with: presentationStyle)
+    }
+    
+    override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        guard let conversation = activeConversation else {
+            fatalError("Expected an active conversation")
+        }
+        
+        presentViewController(for: conversation, with: presentationStyle)
     }
     
     override func didResignActive(with conversation: MSConversation) {
@@ -86,12 +94,6 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called when the user deletes the message without sending it.
     
         // Use this to clean up state related to the deleted message.
-    }
-    
-    override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called before the extension transitions to a new presentation style.
-    
-        // Use this method to prepare for the change in presentation style.
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
