@@ -10,6 +10,7 @@
 		B23B799F6637D3C450E592A1 /* Pods_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB3BD0C16163447AA5415CB /* Pods_MessagesExtension.framework */; };
 		B3E5DBBB1D27B43A633737AF /* Pods_Ultimate_Tic_Tac_Toe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405D28F7EB9AB060987BD347 /* Pods_Ultimate_Tic_Tac_Toe.framework */; };
 		FA2C5B2B1D9D1DF100530997 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C5B2A1D9D1DF100530997 /* InitialViewController.swift */; };
+		FA2C5B2D1D9D209F00530997 /* QueryItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C5B2C1D9D209F00530997 /* QueryItemRepresentable.swift */; };
 		FA7AF6DA1D92C41300BDFCD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7AF6D91D92C41300BDFCD6 /* Assets.xcassets */; };
 		FA7AF6E11D92C41300BDFCD6 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA7AF6E01D92C41300BDFCD6 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA7AF6E61D92C41300BDFCD6 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7AF6E51D92C41300BDFCD6 /* Messages.framework */; };
@@ -54,6 +55,7 @@
 		BB2ECCF7C5456D8C71851825 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		CCB3DCD085700C5D4B5A7F86 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
 		FA2C5B2A1D9D1DF100530997 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		FA2C5B2C1D9D209F00530997 /* QueryItemRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryItemRepresentable.swift; sourceTree = "<group>"; };
 		FA7AF6D61D92C41300BDFCD6 /* Ultimate Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultimate Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7AF6D91D92C41300BDFCD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7AF6DB1D92C41300BDFCD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				FADFE1291D9BFE9600A125FE /* Tile.swift */,
 				FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */,
 				FADFE12D1D9BFEC200A125FE /* Grid.swift */,
+				FA2C5B2C1D9D209F00530997 /* QueryItemRepresentable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */,
+				FA2C5B2D1D9D209F00530997 /* QueryItemRepresentable.swift in Sources */,
 				FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */,
 				FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */,
 				FA2C5B2B1D9D1DF100530997 /* InitialViewController.swift in Sources */,
