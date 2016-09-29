@@ -17,7 +17,7 @@ We also want to provide an example game for the iMessage platform for others to 
 Take a look at the docs over at [liamrahav.me/ultimate-tic-toe](http://liamrahav.me/ultimate-tic-tac-toe). We've written a guide on how the flow of the app works, and also generated documentation for every class we've written (with a few exceptions).
 
 ####I found a bug when playing this game / looking at the code!
-Great! Submit a pull request. 
+Great! Either submit an issue or, preferably, fix it yourself and write a pull request. 
 
 When we have a substantial amount of bug fixes either through our own work or pull requests, we'll push an update to the iMessage App Store. We'll also give credit to every contributor to that update in the patch notes.
 
