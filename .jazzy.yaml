@@ -4,7 +4,7 @@ min_acl: private
 skip_undocumented: true
 
 custom_categories:
-  - name: Game Logic
+  - name: Game Models
     children:
     - BattleGround
     - Grid
