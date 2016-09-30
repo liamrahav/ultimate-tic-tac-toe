@@ -15,57 +15,22 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/QueryItemRepresentable.swift",
-      "line": 13,
-      "symbol": "QueryItemRepresentable.queryItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/QueryItemRepresentable.swift",
-      "line": 15,
-      "symbol": "QueryItemRepresentable.queryItemKey",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 15,
-      "symbol": "TileProtocol.rawValue",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 17,
+      "line": 23,
       "symbol": "TileProtocol.image",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 21,
-      "symbol": "TileProtocol.image",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 39,
+      "line": 41,
       "symbol": "Tile.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 41,
-      "symbol": "Tile.queryItemKey",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 51,
+      "line": 53,
       "symbol": "QueryItemRepresentable.queryItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
