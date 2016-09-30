@@ -9,6 +9,7 @@ custom_categories:
     - BattleGround
     - Grid
     - Tile
+    - TileProtocol
     - QueryItemRepresentable
   - name: Message Logic
     children:

@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ This protocool exists to allow for `QueryItemRepresentable` to work properly with `Tile`, as well as to provide additional properties for `Tile`
+ */
 protocol TileProtocol {
     var rawValue: String { get }
     

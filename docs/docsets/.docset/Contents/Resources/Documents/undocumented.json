@@ -44,35 +44,42 @@
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": null,
-      "symbol": "TileProtocol",
-      "symbol_kind": "source.lang.swift.decl.extension",
+      "line": 15,
+      "symbol": "TileProtocol.rawValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 11,
-      "symbol": "TileProtocol",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "line": 17,
+      "symbol": "TileProtocol.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 36,
+      "line": 21,
+      "symbol": "TileProtocol.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
+      "line": 39,
       "symbol": "Tile.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 38,
+      "line": 41,
       "symbol": "Tile.queryItemKey",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 48,
+      "line": 51,
       "symbol": "QueryItemRepresentable.queryItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
