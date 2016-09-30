@@ -1,20 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/BattleGround.swift",
-      "line": 17,
-      "symbol": "BattleGround.tiles",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Grid.swift",
-      "line": 18,
-      "symbol": "Grid.battleGrounds",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/InitialViewController.swift",
       "line": 11,
       "symbol": "InitialViewController",

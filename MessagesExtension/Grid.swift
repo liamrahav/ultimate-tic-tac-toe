@@ -15,23 +15,23 @@ import Messages
  - note: The `battleGrounds` array is not mutable. This is because each `BattleGround` is unique and does not need to change.
  */
 public class Grid {
+    /// This array contains the 9 `BattleGround` objects in which the players can place their X's and O's.
     let battleGrounds: [[BattleGround]]
     
-    /// This initializer instantiates a `Grid` object filled with 9 `BattleGrounds`, which in turn are each filled with 9 `.empty` `Tile`s
-    init() {
-        var rows = [[BattleGround]]()
+    /// This computed property is an 81 count array of all tiles in the grid
+    var queryItems: [URLQueryItem] {
+        var items = [URLQueryItem]()
         
-        for _ in 0..<3 {
-            var column = [BattleGround]()
-            for _ in 0..<3 {
-                column.append(BattleGround())
+        for row in battleGrounds {
+            for battleGround in row {
+                for item in battleGround.queryItems {
+                    items.append(item)
+                }
             }
-            rows.append(column)
         }
         
-        battleGrounds = rows
+        return items
     }
-    
     /// This initializer takes an array of 81 `Tile` objects represented as `URLQueryItem` objects, and builds the `battleGrounds` array using them.
     init(queryItems: [URLQueryItem]) {
         battleGrounds = [[BattleGround]]()

@@ -14,7 +14,22 @@ import Foundation
  - note: The `tiles` variable is mutable
  */
 public class BattleGround {
+    /// This array contains the individual tiles in each battle ground
     var tiles: [[Tile]]
+    
+    /// This computed property is a 9 count array of type `URLQueryItem` that represents each tile in the battleground
+    var queryItems: [URLQueryItem] {
+        var items = [URLQueryItem]()
+        
+        for row in tiles {
+            for tile in row {
+                items.append(tile.queryItem)
+            }
+        }
+        
+        return items
+    }
+    
     
     /// This initializer creates a `BattleGround` filled with `.empty` tiles
     init() {
