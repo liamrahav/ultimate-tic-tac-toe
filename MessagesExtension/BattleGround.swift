@@ -42,9 +42,9 @@ public class BattleGround {
             guard let value = queryItem.value else { continue }
             
             if let tile = Tile(rawValue: value), queryItem.name == Tile.queryItemKey {
-                let row = i % 3
-                let column = i / 3
-                tiles[row][column] = tile
+                let column = i % 3
+                let row = i / 3
+                tiles[columns][row] = tile
             }
         }
     }
