@@ -57,9 +57,11 @@ public class BattleGround {
             guard let value = queryItem.value else { continue }
             
             if let tile = Tile(rawValue: value), queryItem.name == Tile.queryItemKey {
-                let row = i / 3
-                let column = i % 3
+                let row: Int = i / 3
+                let column: Int = i % 3
                 tiles[row][column] = tile
+            } else {
+                fatalError("Expected the queryItem to be a Tile")
             }
         }
     }
