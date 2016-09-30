@@ -32,11 +32,13 @@ public class Grid {
         battleGrounds = rows
     }
     
+    /// This initializer takes an array of 81 `Tile` objects represented as `URLQueryItem` objects, and builds the `battleGrounds` array using them.
     init(queryItems: [URLQueryItem]) {
         battleGrounds = [[BattleGround]]()
         // TODO: - Add proper intiializer using 81 tile urlqueryitems
     }
     
+    /// This convenience initializer, taken from Apple's sample Ice Cream Builder app, extracts the `URLQueryItem` array out of a `MSMessage` object.
     convenience init?(message: MSMessage?) {
         guard let messageURL = message?.url else {
             return nil

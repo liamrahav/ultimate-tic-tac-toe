@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as `BattleGround`s. Each of these grids contains a 2-D array of `Tile`s, which can be claimed by either player
+ One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as BattleGrounds. Each of these grids contains a 2-D array of `Tile`s, which can be claimed by either player
  
  - note: The `tiles` variable is mutable
  */
@@ -42,9 +42,9 @@ public class BattleGround {
             guard let value = queryItem.value else { continue }
             
             if let tile = Tile(rawValue: value), queryItem.name == Tile.queryItemKey {
-                let column = i % 3
                 let row = i / 3
-                tiles[columns][row] = tile
+                let column = i % 3
+                tiles[row][column] = tile
             }
         }
     }
