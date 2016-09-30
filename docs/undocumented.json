@@ -9,9 +9,23 @@
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Grid.swift",
-      "line": 17,
+      "line": 18,
       "symbol": "Grid.battleGrounds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Grid.swift",
+      "line": 35,
+      "symbol": "Grid.init(queryItems:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Grid.swift",
+      "line": 40,
+      "symbol": "Grid.init(message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

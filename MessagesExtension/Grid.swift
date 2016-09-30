@@ -6,12 +6,13 @@
 //  Copyright © 2016 Liam Rahav. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Messages
 
 /**
  This class refers to the main game grid. It contains a 2-D array of smaller grids, called `BattleGround`s
  
- - Note: The `battleGrounds` array is not mutable. This is because each `BattleGround` is unique and does not need to change.
+ - note: The `battleGrounds` array is not mutable. This is because each `BattleGround` is unique and does not need to change.
  */
 public class Grid {
     let battleGrounds: [[BattleGround]]
@@ -29,5 +30,24 @@ public class Grid {
         }
         
         battleGrounds = rows
+    }
+    
+    init(queryItems: [URLQueryItem]) {
+        battleGrounds = [[BattleGround]]()
+        // TODO: - Add proper intiializer using 81 tile urlqueryitems
+    }
+    
+    convenience init?(message: MSMessage?) {
+        guard let messageURL = message?.url else {
+            return nil
+        }
+        
+        guard let urlComponents = NSURLComponents(url: messageURL, resolvingAgainstBaseURL: false),
+            let queryItems = urlComponents.queryItems else {
+                return nil
+        }
+        
+        self.init(queryItems: queryItems)
+
     }
 }

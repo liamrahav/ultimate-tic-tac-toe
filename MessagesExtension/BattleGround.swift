@@ -11,7 +11,7 @@ import Foundation
 /**
  One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as `BattleGround`s. Each of these grids contains a 2-D array of `Tile`s, which can be claimed by either player
  
- - Note: The `tiles` variable is mutable
+ - note: The `tiles` variable is mutable
  */
 public class BattleGround {
     var tiles: [[Tile]]
@@ -29,5 +29,29 @@ public class BattleGround {
         }
         
         tiles = rows
+    }
+    
+    /// This initializer takes an array of queryItems and generates the proper tile array from them
+    ///
+    /// - important: The array must be of size 9, or the initializer will not work as intended
+    init(queryItems: [URLQueryItem]) {
+        tiles = [[Tile]]()
+        
+        for i in 0..<queryItems.count {
+            let queryItem = queryItems[i]
+            guard let value = queryItem.value else { continue }
+            
+            if let tile = Tile(rawValue: value), queryItem.name == Tile.queryItemKey {
+                // TODO: - Make this way better
+                let index = i % 3
+                if (i > 5) {
+                    tiles[2][index] = tile
+                } else if (i > 2) {
+                    tiles[1][index] = tile
+                } else {
+                    tiles[0][index] = tile
+                }
+            }
+        }
     }
 }
