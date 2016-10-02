@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A3E88C1D9FFF85007C3C02 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3E88B1D9FFF85007C3C02 /* ErrorViewController.swift */; };
 		B23B799F6637D3C450E592A1 /* Pods_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB3BD0C16163447AA5415CB /* Pods_MessagesExtension.framework */; };
 		B3E5DBBB1D27B43A633737AF /* Pods_Ultimate_Tic_Tac_Toe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405D28F7EB9AB060987BD347 /* Pods_Ultimate_Tic_Tac_Toe.framework */; };
 		FA2C5B2B1D9D1DF100530997 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C5B2A1D9D1DF100530997 /* InitialViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00A3E88B1D9FFF85007C3C02 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		0F4B075DA7B80F692E68C749 /* Pods-Ultimate Tic Tac Toe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ultimate Tic Tac Toe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ultimate Tic Tac Toe/Pods-Ultimate Tic Tac Toe.debug.xcconfig"; sourceTree = "<group>"; };
 		405D28F7EB9AB060987BD347 /* Pods_Ultimate_Tic_Tac_Toe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ultimate_Tic_Tac_Toe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB3BD0C16163447AA5415CB /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 			children = (
 				FA7AF6E81D92C41300BDFCD6 /* MessagesViewController.swift */,
 				FA2C5B2A1D9D1DF100530997 /* InitialViewController.swift */,
+				00A3E88B1D9FFF85007C3C02 /* ErrorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				FA7AF6E91D92C41300BDFCD6 /* MessagesViewController.swift in Sources */,
 				FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */,
 				FA2C5B2B1D9D1DF100530997 /* InitialViewController.swift in Sources */,
+				00A3E88C1D9FFF85007C3C02 /* ErrorViewController.swift in Sources */,
 				FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */,
 				FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */,
 			);
