@@ -21,7 +21,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        if (activeConversation == nil){
+        if (activeConversation != nil){
             let conversation = activeConversation
             presentViewController(for: conversation!, with: presentationStyle)
         } else {
