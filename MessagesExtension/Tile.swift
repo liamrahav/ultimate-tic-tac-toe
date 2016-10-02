@@ -8,9 +8,14 @@
 
 import UIKit
 
+/**
+ This protocool exists to allow for `QueryItemRepresentable` to work properly with `Tile`, as well as to provide additional properties for `Tile`
+ */
 protocol TileProtocol {
+    /// This variable represents the enum as a `String`
     var rawValue: String { get }
     
+    /// This image represents the current ownership of any particular tile
     var image: UIImage { get }
 }
 

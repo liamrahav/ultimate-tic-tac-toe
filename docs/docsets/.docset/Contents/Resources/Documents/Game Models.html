@@ -13,7 +13,8 @@
     <a title="Game Models  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (50% documented)</p>
+        <p><a href="index.html"> Docs</a></p>
+        <p class="header-right"><a href="https://github.com/LiamRahav/ultimate-tic-tac-toe"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -39,7 +40,10 @@
                 <a href="Enums/Tile.html">Tile</a>
               </li>
               <li class="nav-group-task">
-                <a href="Game Models.html#/s:P17MessagesExtension22QueryItemRepresentable">QueryItemRepresentable</a>
+                <a href="Protocols/TileProtocol.html">TileProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a>
               </li>
             </ul>
           </li>
@@ -75,7 +79,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as <code>BattleGround</code>s. Each of these grids contains a 2-D array of <code><a href="Enums/Tile.html">Tile</a></code>s, which can be claimed by either player</p>
+                        <p>One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as BattleGrounds. Each of these grids contains a 2-D array of <code><a href="Enums/Tile.html">Tile</a></code>s, which can be claimed by either player</p>
 
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
@@ -159,7 +163,35 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Tile</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="Game Models.html#/s:P17MessagesExtension22QueryItemRepresentable">QueryItemRepresentable</a></span><span class="p">,</span> <span class="kt">TileProtocol</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Tile</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/TileProtocol.html">TileProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P17MessagesExtension12TileProtocol"></a>
+                    <a name="//apple_ref/swift/Protocol/TileProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P17MessagesExtension12TileProtocol">TileProtocol</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This protocool exists to allow for <code><a href="Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a></code> to work properly with <code><a href="Enums/Tile.html">Tile</a></code>, as well as to provide additional properties for <code><a href="Enums/Tile.html">Tile</a></code></p>
+
+                        <a href="Protocols/TileProtocol.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">TileProtocol</span></code></pre>
 
                         </div>
                       </div>
@@ -185,6 +217,7 @@
                       <div class="abstract">
                         <p>Types that conform to the QueryItemRepresentable protocol must implement properties that allow it to be saved as a query item in a URL.</p>
 
+                        <a href="Protocols/QueryItemRepresentable.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>

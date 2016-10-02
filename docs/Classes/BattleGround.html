@@ -14,7 +14,8 @@
     <a title="BattleGround Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (50% documented)</p>
+        <p><a href="../index.html"> Docs</a></p>
+        <p class="header-right"><a href="https://github.com/LiamRahav/ultimate-tic-tac-toe"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -40,7 +41,10 @@
                 <a href="../Enums/Tile.html">Tile</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Game Models.html#/s:P17MessagesExtension22QueryItemRepresentable">QueryItemRepresentable</a>
+                <a href="../Protocols/TileProtocol.html">TileProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a>
               </li>
             </ul>
           </li>
@@ -64,7 +68,7 @@
 
                 </div>
               </div>
-            <p>One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as <code>BattleGround</code>s. Each of these grids contains a 2-D array of <code><a href="../Enums/Tile.html">Tile</a></code>s, which can be claimed by either player</p>
+            <p>One of the nine small grids in the larger grid. For simplicity, we refer to these small grids as BattleGrounds. Each of these grids contains a 2-D array of <code><a href="../Enums/Tile.html">Tile</a></code>s, which can be claimed by either player</p>
 
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
@@ -76,6 +80,60 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17MessagesExtension12BattleGround5tilesGSaGSaOS_4Tile__"></a>
+                    <a name="//apple_ref/swift/Property/tiles" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17MessagesExtension12BattleGround5tilesGSaGSaOS_4Tile__">tiles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This array contains the individual tiles in each battle ground</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">tiles</span><span class="p">:</span> <span class="p">[[</span><span class="kt"><a href="../Enums/Tile.html">Tile</a></span><span class="p">]]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17MessagesExtension12BattleGround10queryItemsGSaV10Foundation12URLQueryItem_"></a>
+                    <a name="//apple_ref/swift/Property/queryItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17MessagesExtension12BattleGround10queryItemsGSaV10Foundation12URLQueryItem_">queryItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This computed property is a 9 count array of type <code>URLQueryItem</code> that represents each tile in the battleground</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">queryItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>

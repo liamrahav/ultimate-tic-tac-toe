@@ -14,7 +14,8 @@
     <a title="Grid Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (50% documented)</p>
+        <p><a href="../index.html"> Docs</a></p>
+        <p class="header-right"><a href="https://github.com/LiamRahav/ultimate-tic-tac-toe"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -40,7 +41,10 @@
                 <a href="../Enums/Tile.html">Tile</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Game Models.html#/s:P17MessagesExtension22QueryItemRepresentable">QueryItemRepresentable</a>
+                <a href="../Protocols/TileProtocol.html">TileProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a>
               </li>
             </ul>
           </li>
@@ -79,9 +83,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC17MessagesExtension4GridcFT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC17MessagesExtension4GridcFT_S0_">init()</a>
+                    <a name="/s:vC17MessagesExtension4Grid13battleGroundsGSaGSaCS_12BattleGround__"></a>
+                    <a name="//apple_ref/swift/Property/battleGrounds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17MessagesExtension4Grid13battleGroundsGSaGSaCS_12BattleGround__">battleGrounds</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -89,14 +93,95 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This initializer instantiates a <code>Grid</code> object filled with 9 <code>BattleGrounds</code>, which in turn are each filled with 9 <code>.empty</code> <code><a href="../Enums/Tile.html">Tile</a></code>s</p>
+                        <p>This array contains the 9 <code><a href="../Classes/BattleGround.html">BattleGround</a></code> objects in which the players can place their X&rsquo;s and O&rsquo;s.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">battleGrounds</span><span class="p">:</span> <span class="p">[[</span><span class="kt"><a href="../Classes/BattleGround.html">BattleGround</a></span><span class="p">]]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17MessagesExtension4Grid10queryItemsGSaV10Foundation12URLQueryItem_"></a>
+                    <a name="//apple_ref/swift/Property/queryItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17MessagesExtension4Grid10queryItemsGSaV10Foundation12URLQueryItem_">queryItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This computed property is an 81 count array of all tiles in the grid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">queryItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17MessagesExtension4GridcFT10queryItemsGSaV10Foundation12URLQueryItem__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(queryItems:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17MessagesExtension4GridcFT10queryItemsGSaV10Foundation12URLQueryItem__S0_">init(queryItems:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This initializer takes an array of 81 <code><a href="../Enums/Tile.html">Tile</a></code> objects represented as <code>URLQueryItem</code> objects, and builds the <code><a href="../Classes/Grid.html#/s:vC17MessagesExtension4Grid13battleGroundsGSaGSaCS_12BattleGround__">battleGrounds</a></code> array using them.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">queryItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17MessagesExtension4GridcFT7messageGSqCSo9MSMessage__GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17MessagesExtension4GridcFT7messageGSqCSo9MSMessage__GSqS0__">init(message:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This convenience initializer, taken from Apple&rsquo;s sample Ice Cream Builder app, extracts the <code>URLQueryItem</code> array out of a <code>MSMessage</code> object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">MSMessage</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>

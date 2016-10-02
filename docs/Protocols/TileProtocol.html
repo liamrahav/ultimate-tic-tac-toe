@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MSMessageTemplateLayout Extension Reference</title>
+    <title>TileProtocol Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/MSMessageTemplateLayout" class="dashAnchor"></a>
-    <a title="MSMessageTemplateLayout Extension Reference"></a>
+    <a name="//apple_ref/swift/Protocol/TileProtocol" class="dashAnchor"></a>
+    <a title="TileProtocol Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        MSMessageTemplateLayout Extension Reference
+        TileProtocol Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -61,14 +61,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MSMessageTemplateLayout</h1>
+            <h1>TileProtocol</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MSMessageTemplateLayout</span> <span class="p">:</span> <span class="kt">MSMessageLayout</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">TileProtocol</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>This protocool exists to allow for <code><a href="../Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a></code> to work properly with <code><a href="../Enums/Tile.html">Tile</a></code>, as well as to provide additional properties for <code><a href="../Enums/Tile.html">Tile</a></code></p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -76,9 +77,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FE17MessagesExtensionCSo23MSMessageTemplateLayoutcFT5imageCSo7UIImage7captionSS_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(image:caption:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE17MessagesExtensionCSo23MSMessageTemplateLayoutcFT5imageCSo7UIImage7captionSS_S0_">init(image:caption:)</a>
+                    <a name="/s:vP17MessagesExtension12TileProtocol8rawValueSS"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP17MessagesExtension12TileProtocol8rawValueSS">rawValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -86,20 +87,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This initializer takes in an image and a caption and returns a properly set <code>MSMessageTemplateLayout</code></p>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    This convenience initializer is declared in an extension.
-
-</div>
+                        <p>This variable represents the enum as a <code>String</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">caption</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP17MessagesExtension12TileProtocol5imageCSo7UIImage"></a>
+                    <a name="//apple_ref/swift/Property/image" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP17MessagesExtension12TileProtocol5imageCSo7UIImage">image</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This image represents the current ownership of any particular tile</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span></code></pre>
 
                         </div>
                       </div>
