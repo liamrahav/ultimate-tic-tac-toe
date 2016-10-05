@@ -46,6 +46,10 @@ class MessagesViewController: MSMessagesAppViewController {
             controller = UIViewController()
         }
         
+        fillViewWithSubview(child: controller)
+    }
+    
+    public func fillViewWithSubview(child: UIViewController) {
         // Remove all children from the view
         for childViewController in childViewControllers {
             childViewController.willMove(toParentViewController: nil)
@@ -54,19 +58,20 @@ class MessagesViewController: MSMessagesAppViewController {
         }
         
         // Embed the new controller
-        addChildViewController(controller)
+        addChildViewController(child)
         
-        controller.view.frame = view.bounds
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(controller.view)
+        child.view.frame = view.bounds
+        child.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(child.view)
         
-        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        child.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        child.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        child.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        child.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        controller.didMove(toParentViewController: self)
+        child.didMove(toParentViewController: self)
     }
+
     
     // The flow for this function was taken from Apple's Ice Cream Builder example
     func presentErrorViewController(with presentationStyle: MSMessagesAppPresentationStyle, errorMessage: String){
@@ -81,9 +86,9 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Remove all children from the view
         for childViewController in childViewControllers {
-            childViewController.willMove(toParentViewController: nil)
+            childViewController.willMove(toViewController: nil)
             childViewController.view.removeFromSuperview()
-            childViewController.removeFromParentViewController()
+            childViewController.removeFromViewController()
         }
         
         // Embed the new controller
@@ -98,7 +103,7 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        controller.didMove(toParentViewController: self)
+        controller.didMove(toViewController: self)
     }
     
     func instantiateInitialViewController() -> UIViewController {
@@ -112,5 +117,4 @@ class MessagesViewController: MSMessagesAppViewController {
         // Add properties as needed here
         return controller
     }
-
 }

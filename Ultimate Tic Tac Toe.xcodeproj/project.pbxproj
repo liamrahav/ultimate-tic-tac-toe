@@ -147,10 +147,10 @@
 		FA7AF6E71D92C41300BDFCD6 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
-				FADFE12F1D9C033E00A125FE /* Message */,
+				FADFE12F1D9C033E00A125FE /* Helper Classes */,
 				FADFE1281D9BFE7B00A125FE /* Models */,
-				FADFE1331D9C0FBD00A125FE /* Supporting Files */,
 				FADFE1321D9C0FB400A125FE /* View Controllers */,
+				FADFE1331D9C0FBD00A125FE /* Supporting Files */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -166,12 +166,12 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FADFE12F1D9C033E00A125FE /* Message */ = {
+		FADFE12F1D9C033E00A125FE /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
 				FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */,
 			);
-			name = Message;
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 		FADFE1321D9C0FB400A125FE /* View Controllers */ = {
