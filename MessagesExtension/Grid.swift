@@ -32,6 +32,23 @@ public class Grid {
         
         return items
     }
+    
+    /// This initializer creates a fresh game with 9 empty battlegrounds
+    init() {
+        var battleGrounds = [[BattleGround]]()
+        
+        for _ in 0..<3 {
+            var column = [BattleGround]()
+            for _ in 0..<3 {
+                column.append(BattleGround())
+            }
+            battleGrounds.append(column)
+        }
+
+        
+        self.battleGrounds = battleGrounds
+    }
+    
     /// This initializer takes an array of 81 `Tile` objects represented as `URLQueryItem` objects, and builds the `battleGrounds` array using them.
     init(queryItems: [URLQueryItem]) {
         var battleGrounds = [[BattleGround]]()

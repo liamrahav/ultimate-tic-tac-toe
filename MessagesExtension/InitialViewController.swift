@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Messages
 
 class InitialViewController: UIViewController {
 
@@ -31,7 +32,15 @@ class InitialViewController: UIViewController {
     }
     
     func startGame() {
-        print("booyah")
+        let messagesVC = parent as! MessagesViewController
+        if let conversation = messagesVC.activeConversation {
+            let message = MSMessage(grid: Grid(), caption: "Your turn!", session: conversation.selectedMessage?.session)
+            conversation.insert(message) { error in
+                messagesVC.fillViewWithSubview(child: ErrorViewController(message: error.debugDescription))
+            }
+        } else {
+            messagesVC.fillViewWithSubview(child: ErrorViewController(message: "Expected an active conversation"))
+        }
     }
     
     override func updateViewConstraints() {
