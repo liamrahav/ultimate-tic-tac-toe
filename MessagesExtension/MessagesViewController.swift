@@ -86,9 +86,9 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Remove all children from the view
         for childViewController in childViewControllers {
-            childViewController.willMove(toViewController: nil)
+            childViewController.willMove(toParentViewController: nil)
             childViewController.view.removeFromSuperview()
-            childViewController.removeFromViewController()
+            childViewController.removeFromParentViewController()
         }
         
         // Embed the new controller
@@ -103,7 +103,7 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        controller.didMove(toViewController: self)
+        controller.didMove(toParentViewController: self)
     }
     
     func instantiateInitialViewController() -> UIViewController {
