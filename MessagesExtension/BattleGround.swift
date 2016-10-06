@@ -46,11 +46,15 @@ public class BattleGround {
         tiles = rows
     }
     
-    /// This initializer takes an array of queryItems and generates the proper tile array from them
+    /// This convenience initializer takes an array of queryItems and generates the proper tile array from them.
+    ///
+    /// - note: The reason why this is a convenience initializer that first calls the default `init()` (creating a blank
+    ///         tile grid), and then adds in the appropriate tiles, is that this function is implemented in a way that directly
+    ///         accesses the array of tiles (e.g. `tiles[1][2]`)
     ///
     /// - important: The array must be of size 9, or the initializer will not work as intended
-    init(queryItems: [URLQueryItem]) {
-        tiles = [[Tile]]()
+    convenience init(queryItems: [URLQueryItem]) {
+        self.init()
         
         for i in 0..<queryItems.count {
             let queryItem = queryItems[i]

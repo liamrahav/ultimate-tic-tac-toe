@@ -40,9 +40,7 @@ class MessagesViewController: MSMessagesAppViewController {
             controller = instantiateInitialViewController()
         } else {
             // TODO: - Show the actual game screen
-            
-            // Temp
-            controller = UIViewController()
+            controller = instantiateGameViewController(conversation: conversation)
         }
         
         fillViewWithSubview(child: controller)
@@ -73,7 +71,11 @@ class MessagesViewController: MSMessagesAppViewController {
 
     func instantiateInitialViewController() -> UIViewController {
         let controller = InitialViewController()
-        // Add properties as needed here
+        return controller
+    }
+    
+    func instantiateGameViewController(conversation: MSConversation) -> UIViewController {
+        let controller = GameViewController(conversation: conversation)
         return controller
     }
 }

@@ -44,7 +44,6 @@ public class Grid {
             }
             battleGrounds.append(column)
         }
-
         
         self.battleGrounds = battleGrounds
     }

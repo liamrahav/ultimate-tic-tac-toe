@@ -13,7 +13,8 @@
     <a title="Other Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (76% documented)</p>
+        <p><a href="index.html"> Docs</a></p>
+        <p class="header-right"><a href="https://github.com/LiamRahav/ultimate-tic-tac-toe"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -27,7 +28,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Game Logic.html">Game Logic</a>
+            <a href="Game Models.html">Game Models</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/BattleGround.html">BattleGround</a>
@@ -38,13 +39,27 @@
               <li class="nav-group-task">
                 <a href="Enums/Tile.html">Tile</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Protocols/TileProtocol.html">TileProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/QueryItemRepresentable.html">QueryItemRepresentable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Message Logic.html">Message Logic</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/MSMessageTemplateLayout.html">MSMessageTemplateLayout</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Other Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions/MSMessageTemplateLayout.html">MSMessageTemplateLayout</a>
+                <a href="Other Extensions.html#/c:objc(cs)MSMessage">MSMessage</a>
               </li>
             </ul>
           </li>
@@ -63,9 +78,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MSMessageTemplateLayout"></a>
-                    <a name="//apple_ref/swift/Extension/MSMessageTemplateLayout" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MSMessageTemplateLayout">MSMessageTemplateLayout</a>
+                    <a name="/c:objc(cs)MSMessage"></a>
+                    <a name="//apple_ref/swift/Extension/MSMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MSMessage">MSMessage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -74,13 +89,12 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         
-                        <a href="Extensions/MSMessageTemplateLayout.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MSMessageTemplateLayout</span> <span class="p">:</span> <span class="kt">MSMessageLayout</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MSMessage</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span><span class="p">,</span> <span class="kt">NSSecureCoding</span></code></pre>
 
                         </div>
                       </div>
