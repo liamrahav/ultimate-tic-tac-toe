@@ -22,6 +22,7 @@ protocol TileProtocol {
 extension TileProtocol {
     var image: UIImage {
         let imageName = self.rawValue
+        if (imageName == "empty") { return UIImage() }
         guard let image = UIImage(named: imageName) else { fatalError("Unable to find image named \(imageName)") }
         return image
     }

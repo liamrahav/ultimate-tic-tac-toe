@@ -44,14 +44,14 @@
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 41,
+      "line": 42,
       "symbol": "Tile.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/Tile.swift",
-      "line": 53,
+      "line": 54,
       "symbol": "QueryItemRepresentable.queryItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"

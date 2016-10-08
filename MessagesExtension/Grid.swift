@@ -18,6 +18,26 @@ public class Grid {
     /// This array contains the 9 `BattleGround` objects in which the players can place their X's and O's.
     let battleGrounds: [[BattleGround]]
     
+    /// This computed property calculates which player's turn it is based on the total count of X's and O's in the game.
+    var currentPlayer: Tile {
+        var xCount = 0
+        var oCount = 0
+        
+        for row in battleGrounds {
+            for battleGround in row {
+                for tileRow in battleGround.tiles {
+                    for tile in tileRow {
+                        if tile == .x { xCount += 1 }
+                        else if tile == .o {oCount += 1 }
+                    }
+                }
+            }
+        }
+        
+        if (xCount == oCount) { return .x }
+        return .o
+    }
+    
     /// This computed property is an 81 count array of all tiles in the grid
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()

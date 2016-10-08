@@ -14,6 +14,8 @@ class GameViewController: UIViewController {
     var conversation: MSConversation
     var grid: Grid
     
+    var needsUpdateConstraints = true
+    
     init(conversation: MSConversation) {
         self.conversation = conversation
         
@@ -37,5 +39,16 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateViewConstraints()
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        if needsUpdateConstraints {
+            
+            
+            needsUpdateConstraints = false
+        }
     }
 }
