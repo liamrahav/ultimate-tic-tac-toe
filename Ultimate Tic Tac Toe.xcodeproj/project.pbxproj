@@ -24,6 +24,7 @@
 		FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */; };
 		FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12D1D9BFEC200A125FE /* Grid.swift */; };
 		FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */; };
+		FAF7BB981DC0E63700D50D32 /* BattleGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGround.swift; sourceTree = "<group>"; };
 		FADFE12D1D9BFEC200A125FE /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MSMessageTemplateLayout+Initializer.swift"; sourceTree = "<group>"; };
+		FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				FA2C5B2A1D9D1DF100530997 /* InitialViewController.swift */,
 				00A3E88B1D9FFF85007C3C02 /* ErrorViewController.swift */,
 				FA73D35B1DA5D42C00C39C78 /* GameViewController.swift */,
+				FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				FADFE12A1D9BFE9600A125FE /* Tile.swift in Sources */,
 				FA2C5B2B1D9D1DF100530997 /* InitialViewController.swift in Sources */,
 				00A3E88C1D9FFF85007C3C02 /* ErrorViewController.swift in Sources */,
+				FAF7BB981DC0E63700D50D32 /* BattleGroundView.swift in Sources */,
 				FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */,
 				FAB30AAE1DA5433200DC18EC /* MSMessage+CreateMessage.swift in Sources */,
 				FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */,

@@ -36,9 +36,12 @@ class GameViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let battleGroundView = BattleGroundView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(battleGroundView)
         updateViewConstraints()
     }
     
@@ -46,7 +49,11 @@ class GameViewController: UIViewController {
         super.updateViewConstraints()
         
         if needsUpdateConstraints {
-            
+            battleGroundView.snp.makeConstraints { make in
+                make.center.equalTo(view)
+                make.height.equalTo(view)
+                make.width.equalTo(view)
+            }
             
             needsUpdateConstraints = false
         }
