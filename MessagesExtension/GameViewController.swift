@@ -36,25 +36,48 @@ class GameViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let battleGroundView = BattleGroundView()
+    func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
+        //design the path
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addLine(to: end)
+        
+        //design path in layer
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = 150.0
+        
+        self.view.layer.addSublayer(shapeLayer)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(battleGroundView)
         updateViewConstraints()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if (topLayoutGuide.length > 0) {
+            let widthMultiplier: CGFloat = 0.05
+            print("TOTAL SCREEN WIDTH \(UIScreen.main.bounds.width)")
+            let width = view.bounds.width - (view.bounds.width * widthMultiplier) - (view.bounds.width * widthMultiplier) / 2
+            let battleGroundView = BattleGroundView(frame: CGRect(x: (view.bounds.width * widthMultiplier) / 2,
+                                                                  y: (view.bounds.height - topLayoutGuide.length - bottomLayoutGuide.length - view.bounds.width) / 2,
+                                                                  width: width,
+                                                                  height: width))
+
+            
+            view.addSubview(battleGroundView)
+        }
     }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
         if needsUpdateConstraints {
-            battleGroundView.snp.makeConstraints { make in
-                make.center.equalTo(view)
-                make.height.equalTo(view)
-                make.width.equalTo(view)
-            }
-            
+
             needsUpdateConstraints = false
         }
     }
