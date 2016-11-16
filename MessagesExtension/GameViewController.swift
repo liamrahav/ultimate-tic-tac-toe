@@ -67,7 +67,8 @@ class GameViewController: UIViewController {
                                                                   y: (view.bounds.height - topLayoutGuide.length - bottomLayoutGuide.length - view.bounds.width) / 2,
                                                                   width: width,
                                                                   height: width),
-                                                    battleGround: grid.battleGrounds[0][0])
+                                                    battleGround: grid.battleGrounds[0][0],
+                                                    currentPlayer: grid.currentPlayer)
 
             
             view.addSubview(battleGroundView)
