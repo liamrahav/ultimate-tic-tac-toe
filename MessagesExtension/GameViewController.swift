@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     var grid: Grid
     
     var needsUpdateConstraints = true
+    var needsDisplayGrid = true
     
     init(conversation: MSConversation) {
         self.conversation = conversation
@@ -59,17 +60,18 @@ class GameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if (topLayoutGuide.length > 0) {
+        if (topLayoutGuide.length > 0 && needsDisplayGrid) {
             let widthMultiplier: CGFloat = 0.05
-            print("TOTAL SCREEN WIDTH \(UIScreen.main.bounds.width)")
             let width = view.bounds.width - (view.bounds.width * widthMultiplier) - (view.bounds.width * widthMultiplier) / 2
             let battleGroundView = BattleGroundView(frame: CGRect(x: (view.bounds.width * widthMultiplier) / 2,
                                                                   y: (view.bounds.height - topLayoutGuide.length - bottomLayoutGuide.length - view.bounds.width) / 2,
                                                                   width: width,
-                                                                  height: width))
+                                                                  height: width),
+                                                    battleGround: grid.battleGrounds[0][0])
 
             
             view.addSubview(battleGroundView)
+            needsDisplayGrid = false
         }
     }
     
