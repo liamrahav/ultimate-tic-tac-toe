@@ -11,6 +11,7 @@ import UIKit
 class BattleGroundView: UIView {
     let battleGround: BattleGround
     let currentPlayer: Tile
+    var lastChoice: (row: Int, column: Int)?
     
     init(frame: CGRect, battleGround: BattleGround, currentPlayer: Tile) {
         self.battleGround = battleGround
@@ -170,12 +171,15 @@ class BattleGroundView: UIView {
     func tapped(row: Int, column: Int) {
         if (battleGround.tiles[row][column] == .empty) {
             battleGround.tiles[row][column] = currentPlayer
-            
+            if (lastChoice != nil) {
+                battleGround.tiles[lastChoice!.row][lastChoice!.column] = .empty
+            }
+            lastChoice = (row: row, column: column)
             drawTiles()
         }
     }
     
-    func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
+    private func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
         //design the path
         let path = UIBezierPath()
         path.move(to: start)
