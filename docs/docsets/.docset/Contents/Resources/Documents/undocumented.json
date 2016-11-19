@@ -1,6 +1,13 @@
 {
   "warnings": [
     {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/BattleGroundView.swift",
+      "line": 11,
+      "symbol": "BattleGroundView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/ErrorViewController.swift",
       "line": 12,
       "symbol": "ErrorViewController",

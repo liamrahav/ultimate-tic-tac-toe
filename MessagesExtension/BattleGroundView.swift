@@ -15,8 +15,9 @@ class BattleGroundView: UIView {
     init(frame: CGRect, battleGround: BattleGround, currentPlayer: Tile) {
         self.battleGround = battleGround
         self.currentPlayer = currentPlayer
-
+        
         super.init(frame: frame)
+        clipsToBounds = true
        
         //Horizontal Lines
         drawLine(start: CGPoint(x: frame.minX, y: (frame.height / 3) + frame.minY),
@@ -28,7 +29,6 @@ class BattleGroundView: UIView {
                  color: .black)
         
         //Vertial Lines
-        
         drawLine(start: CGPoint(x: (frame.width / 3) + frame.minX, y: frame.minY),
                  end: CGPoint(x: (frame.width / 3) + frame.minX, y: frame.maxY),
                  color: .black)
@@ -52,7 +52,6 @@ class BattleGroundView: UIView {
         drawTiles()
         
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -118,8 +117,6 @@ class BattleGroundView: UIView {
         view.frame = CGRect(x: frame.minX, y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height: frame.height / 3)
         addSubview(view)
         
-        print("Lower Left Tile Height: \(view.frame.width)")
-        
         // Lower Center Tile [2][1]
         view = UIImageView(image: battleGround.tiles[2][1].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerCenterTapped)))
@@ -127,17 +124,12 @@ class BattleGroundView: UIView {
         view.frame = CGRect(x: frame.minX + ((frame.width / 3)), y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height: frame.height / 3)
         addSubview(view)
         
-        print("Lower Center Tile Height: \(view.frame.width)")
-        
         // Lower Right Tile [2][2]
         view = UIImageView(image: battleGround.tiles[2][2].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerRightTapped)))
         view.isUserInteractionEnabled = true
         view.frame = CGRect(x: frame.minX + ((frame.width / 3) * 2), y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height:frame.height / 3)
         addSubview(view)
-        
-        print("Lower Right Tile Height: \(view.frame.width)")
-        
     }
     
     func upperLeftTapped() {

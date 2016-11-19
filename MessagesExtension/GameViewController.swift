@@ -80,7 +80,7 @@ class GameViewController: UIViewController {
         super.updateViewConstraints()
         
         if needsUpdateConstraints {
-
+            
             needsUpdateConstraints = false
         }
     }

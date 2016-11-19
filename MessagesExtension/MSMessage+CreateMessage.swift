@@ -20,7 +20,6 @@ extension MSMessage {
         let messageLayout = MSMessageTemplateLayout(image: image, caption: caption)
         
         url = components.url
-        print(url)
         layout = messageLayout
     }
 }
