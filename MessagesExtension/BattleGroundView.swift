@@ -21,34 +21,22 @@ class BattleGroundView: UIView {
         clipsToBounds = true
        
         //Horizontal Lines
-        drawLine(start: CGPoint(x: frame.minX, y: (frame.height / 3) + frame.minY),
-                 end: CGPoint(x: frame.maxX - frame.minX, y: (frame.height / 3) + frame.minY),
+        drawLine(start: CGPoint(x: bounds.minX, y: (bounds.height / 3) + bounds.minY),
+                 end: CGPoint(x: bounds.maxX - bounds.minX, y: (bounds.height / 3) + bounds.minY),
                  color: .black)
         
-        drawLine(start: CGPoint(x: frame.minX, y: ((frame.height / 3) * 2) + frame.minY),
-                 end: CGPoint(x: frame.maxX - frame.minX, y: ((frame.height / 3) * 2) + frame.minY),
+        drawLine(start: CGPoint(x: bounds.minX, y: ((bounds.height / 3) * 2) + bounds.minY),
+                 end: CGPoint(x: bounds.maxX - bounds.minX, y: ((bounds.height / 3) * 2) + bounds.minY),
                  color: .black)
         
         //Vertial Lines
-        drawLine(start: CGPoint(x: (frame.width / 3) + frame.minX, y: frame.minY),
-                 end: CGPoint(x: (frame.width / 3) + frame.minX, y: frame.maxY),
+        drawLine(start: CGPoint(x: (bounds.width / 3) + bounds.minX, y: bounds.minY),
+                 end: CGPoint(x: (bounds.width / 3) + bounds.minX, y: bounds.maxY),
                  color: .black)
         
-        drawLine(start: CGPoint(x: ((frame.width / 3) * 2) + frame.minX, y: frame.minY),
-                 end: CGPoint(x: ((frame.width / 3) * 2) + frame.minX, y: frame.maxY),
+        drawLine(start: CGPoint(x: ((bounds.width / 3) * 2) + bounds.minX, y: bounds.minY),
+                 end: CGPoint(x: ((bounds.width / 3) * 2) + bounds.minX, y: bounds.maxY),
                  color: .black)
-        
-//        battleGround.tiles[0][0] = .o
-//        battleGround.tiles[0][1] = .x
-//        battleGround.tiles[0][2] = .o
-//        
-//        battleGround.tiles[1][0] = .x
-//        battleGround.tiles[1][1] = .x
-//        battleGround.tiles[1][2] = .x
-//        
-//        battleGround.tiles[2][0] = .x
-//        battleGround.tiles[2][1] = .x
-//        battleGround.tiles[2][2] = .x
         
         drawTiles()
         
@@ -69,21 +57,21 @@ class BattleGroundView: UIView {
         var view = UIImageView(image: battleGround.tiles[0][0].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(upperLeftTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Upper Middle Tile [0][1]
         view = UIImageView(image: battleGround.tiles[0][1].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(upperCenterTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + frame.width / 3, y: frame.minY, width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + bounds.width / 3, y: bounds.minY, width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Upper Right Tile [0][2]
         view = UIImageView(image: battleGround.tiles[0][2].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(upperRightTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + ((frame.width / 3) * 2), y: frame.minY, width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + ((bounds.width / 3) * 2), y: bounds.minY, width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         
@@ -92,21 +80,21 @@ class BattleGroundView: UIView {
         view = UIImageView(image: battleGround.tiles[1][0].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(middleLeftTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX, y: frame.minY + ((frame.height / 3)), width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX, y: bounds.minY + ((bounds.height / 3)), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Middle Center Tile [1][1]
         view = UIImageView(image: battleGround.tiles[1][1].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(middleCenterTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + ((frame.width / 3)), y: frame.minY + ((frame.height / 3)), width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + ((bounds.width / 3)), y: bounds.minY + ((bounds.height / 3)), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Middle Center Tile [1][2]
         view = UIImageView(image: battleGround.tiles[1][2].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(middleRightTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + ((frame.width / 3) * 2), y: frame.minY + ((frame.height / 3)), width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + ((bounds.width / 3) * 2), y: bounds.minY + ((bounds.height / 3)), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // FIXME: Only clicking the top of the next 3 views works
@@ -115,21 +103,21 @@ class BattleGroundView: UIView {
         view = UIImageView(image: battleGround.tiles[2][0].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerLeftTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX, y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX, y: bounds.minY + ((bounds.height / 3) * 2), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Lower Center Tile [2][1]
         view = UIImageView(image: battleGround.tiles[2][1].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerCenterTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + ((frame.width / 3)), y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height: frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + ((bounds.width / 3)), y: bounds.minY + ((bounds.height / 3) * 2), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
         // Lower Right Tile [2][2]
         view = UIImageView(image: battleGround.tiles[2][2].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerRightTapped)))
         view.isUserInteractionEnabled = true
-        view.frame = CGRect(x: frame.minX + ((frame.width / 3) * 2), y: frame.minY + ((frame.height / 3) * 2), width: frame.width / 3, height:frame.height / 3)
+        view.frame = CGRect(x: bounds.minX + ((bounds.width / 3) * 2), y: bounds.minY + ((bounds.height / 3) * 2), width: bounds.width / 3, height:bounds.height / 3)
         addSubview(view)
     }
     
