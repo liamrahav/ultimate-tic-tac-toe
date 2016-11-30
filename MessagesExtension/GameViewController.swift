@@ -37,21 +37,6 @@ class GameViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
-        //design the path
-        let path = UIBezierPath()
-        path.move(to: start)
-        path.addLine(to: end)
-        
-        //design path in layer
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = color.cgColor
-        shapeLayer.lineWidth = 150.0
-        
-        self.view.layer.addSublayer(shapeLayer)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,13 +46,38 @@ class GameViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
-            let rect = CGRect(x: 0, y: topLayoutGuide.length, width: 250, height: 250)
-            let battleGroundView = BattleGroundView(frame: rect,
-                                                    battleGround: grid.battleGrounds[0][0],
-                                                    currentPlayer: grid.currentPlayer)
+//            let rect = CGRect(x: 0, y: topLayoutGuide.length, width: 250, height: 250)
+//            let battleGroundView = BattleGroundView(frame: rect,
+//                                                    battleGround: grid.battleGrounds[0][0],
+//                                                    currentPlayer: grid.currentPlayer)
+//
+//        
+//            view.addSubview(battleGroundView)
+            let mult: CGFloat = 0.025
+            let minX = view.frame.width * mult
+            let actualWidth = view.frame.width - (minX)
+            let actualHeight = topLayoutGuide.length + (((view.frame.height - topLayoutGuide.length - bottomLayoutGuide.length) / 2) - (actualWidth / 2))
+            let subRect = CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
+            
+            //Horizontal Lines
+            drawLine(start: CGPoint(x: subRect.minX, y: (subRect.height / 3) + subRect.minY),
+                     end: CGPoint(x: subRect.maxX - subRect.minX, y: (subRect.height / 3) + subRect.minY),
+                     color: .black)
+            
+            drawLine(start: CGPoint(x: subRect.minX, y: ((subRect.height / 3) * 2) + subRect.minY),
+                     end: CGPoint(x: subRect.maxX - subRect.minX, y: ((subRect.height / 3) * 2) + subRect.minY),
+                     color: .black)
+            
+            //Vertial Lines
+            drawLine(start: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.minY),
+                     end: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.maxY),
+                     color: .black)
+            
+            drawLine(start: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.minY),
+                     end: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.maxY),
+                     color: .black)
 
-        
-            view.addSubview(battleGroundView)
+            
             needsDisplayGrid = false
         }
     }
@@ -79,5 +89,20 @@ class GameViewController: UIViewController {
             
             needsUpdateConstraints = false
         }
+    }
+    
+    private func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
+        //design the path
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addLine(to: end)
+        
+        //design path in layer
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = 2
+        
+        self.view.layer.addSublayer(shapeLayer)
     }
 }
