@@ -97,8 +97,6 @@ class BattleGroundView: UIView {
         view.frame = CGRect(x: bounds.minX + ((bounds.width / 3) * 2), y: bounds.minY + ((bounds.height / 3)), width: bounds.width / 3, height: bounds.height / 3)
         addSubview(view)
         
-        // FIXME: Only clicking the top of the next 3 views works
-        
         // Lower Left Tile [2][0]
         view = UIImageView(image: battleGround.tiles[2][0].image)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lowerLeftTapped)))

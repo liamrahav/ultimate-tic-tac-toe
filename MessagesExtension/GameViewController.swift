@@ -46,13 +46,6 @@ class GameViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
-//            let rect = CGRect(x: 0, y: topLayoutGuide.length, width: 250, height: 250)
-//            let battleGroundView = BattleGroundView(frame: rect,
-//                                                    battleGround: grid.battleGrounds[0][0],
-//                                                    currentPlayer: grid.currentPlayer)
-//
-//        
-//            view.addSubview(battleGroundView)
             let mult: CGFloat = 0.025
             let minX = view.frame.width * mult
             let actualWidth = view.frame.width - (minX)
@@ -78,9 +71,17 @@ class GameViewController: UIViewController {
                      color: .black)
 
             
+            // Upper Left Tile [0][0]
+            var battleGround = BattleGroundView(frame: CGRect(x: 0,y: 0,width: 100,height: 100), battleGround: grid.battleGrounds[0][0], currentPlayer: grid.currentPlayer)
+            battleGround.isUserInteractionEnabled = true
+            view.addSubview(battleGround)
+            
+            
             needsDisplayGrid = false
         }
     }
+    
+    
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
