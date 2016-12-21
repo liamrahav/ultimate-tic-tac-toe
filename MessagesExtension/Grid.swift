@@ -37,7 +37,7 @@ public class Grid {
         if (xCount == oCount) { return .x }
         return .o
     }
-    
+        
     /// This computed property is an 81 count array of all tiles in the grid
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()

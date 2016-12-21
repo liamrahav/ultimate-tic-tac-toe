@@ -24,6 +24,7 @@
 		FADFE12C1D9BFEAE00A125FE /* BattleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */; };
 		FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE12D1D9BFEC200A125FE /* Grid.swift */; };
 		FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */; };
+		FAE1B95B1E0AD241005BEECE /* BattleGroundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1B95A1E0AD241005BEECE /* BattleGroundDelegate.swift */; };
 		FAF7BB981DC0E63700D50D32 /* BattleGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		FADFE12B1D9BFEAE00A125FE /* BattleGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGround.swift; sourceTree = "<group>"; };
 		FADFE12D1D9BFEC200A125FE /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		FADFE1301D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MSMessageTemplateLayout+Initializer.swift"; sourceTree = "<group>"; };
+		FAE1B95A1E0AD241005BEECE /* BattleGroundDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGroundDelegate.swift; sourceTree = "<group>"; };
 		FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				00A3E88B1D9FFF85007C3C02 /* ErrorViewController.swift */,
 				FA73D35B1DA5D42C00C39C78 /* GameViewController.swift */,
 				FAF7BB971DC0E63700D50D32 /* BattleGroundView.swift */,
+				FAE1B95A1E0AD241005BEECE /* BattleGroundDelegate.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				FAF7BB981DC0E63700D50D32 /* BattleGroundView.swift in Sources */,
 				FADFE1311D9C038100A125FE /* MSMessageTemplateLayout+Initializer.swift in Sources */,
 				FAB30AAE1DA5433200DC18EC /* MSMessage+CreateMessage.swift in Sources */,
+				FAE1B95B1E0AD241005BEECE /* BattleGroundDelegate.swift in Sources */,
 				FADFE12E1D9BFEC200A125FE /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

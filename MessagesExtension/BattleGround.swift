@@ -30,7 +30,6 @@ public class BattleGround {
         return items
     }
     
-    
     /// This initializer creates a `BattleGround` filled with `.empty` tiles
     init() {
         var rows = [[Tile]]()

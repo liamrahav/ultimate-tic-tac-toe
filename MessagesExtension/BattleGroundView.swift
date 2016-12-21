@@ -11,6 +11,7 @@ import UIKit
 class BattleGroundView: UIView {
     let battleGround: BattleGround
     let currentPlayer: Tile
+    var delegate: BattleGroundDelegate?
     var lastChoice: (row: Int, column: Int)?
     
     init(frame: CGRect, battleGround: BattleGround, currentPlayer: Tile) {
@@ -162,6 +163,8 @@ class BattleGroundView: UIView {
             }
             lastChoice = (row: row, column: column)
             drawTiles()
+            
+            delegate?.moveMade()
         }
     }
     
