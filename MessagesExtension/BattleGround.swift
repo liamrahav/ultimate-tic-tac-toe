@@ -30,6 +30,31 @@ public class BattleGround {
         return items
     }
     
+    /// This computer property stores the winner of the battleground, if there is one
+    var winner: Tile? {
+        var winner: Tile? = nil
+        
+        // Accross the top
+        if (tiles[0][0] != .empty && tiles[0][0] == tiles[0][1] && tiles[0][0] == tiles[0][2]) { winner = tiles[0][0] }
+        // Accross the middle
+        else if (tiles[1][0] != .empty && tiles[1][0] == tiles[1][1] && tiles[1][0] == tiles[1][2]) { winner = tiles[1][0] }
+        // Across the bottom
+        else if  (tiles[2][0] != .empty && tiles[2][0] == tiles[2][1] && tiles[2][0] == tiles[2][2]) { winner = tiles[2][0] }
+        
+        // Down the left
+        else if (tiles[0][0] != .empty && tiles[0][0] == tiles[1][0] && tiles[0][0] == tiles[2][0]) { winner = tiles[0][0] }
+        // Down the middle
+        else if (tiles[0][1] != .empty && tiles[0][1] == tiles[1][1] && tiles[0][1] == tiles[2][1]) { winner = tiles[0][1] }
+        // Down the right
+        else if (tiles[0][2] != .empty && tiles[0][2] == tiles[1][2] && tiles[0][2] == tiles[2][2]) { winner = tiles[0][2] }
+        
+        // Diagonals
+        else if (tiles[0][0] != .empty && tiles[0][0] == tiles[1][1] && tiles[0][0] == tiles[2][2]) { winner = tiles[0][0] }
+        else if (tiles[0][2] != .empty && tiles[0][2] == tiles[1][1] && tiles[0][2] == tiles[2][0]) { winner = tiles[0][2] }
+        
+        return winner
+    }
+    
     /// This initializer creates a `BattleGround` filled with `.empty` tiles
     init() {
         var rows = [[Tile]]()

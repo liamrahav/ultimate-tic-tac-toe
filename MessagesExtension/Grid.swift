@@ -38,7 +38,7 @@ public class Grid {
         return .o
     }
         
-    /// This computed property is an 81 count array of all tiles in the grid
+    /// This computed property is an 81 count array of all battleGrounds in the grid
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
         
@@ -53,7 +53,32 @@ public class Grid {
         return items
     }
     
-    /// This initializer creates a fresh game with 9 empty battlegrounds
+    /// This computer property stores the winner of the game, if there is one
+    var winner: Tile? {
+        var winner: Tile? = nil
+        
+        // Accross the top
+        if (battleGrounds[0][0].winner != nil && battleGrounds[0][0].winner == battleGrounds[0][1].winner && battleGrounds[0][0].winner == battleGrounds[0][2].winner) { winner = battleGrounds[0][0].winner }
+        // Accross the middle
+        else if (battleGrounds[1][0].winner != .empty && battleGrounds[1][0].winner == battleGrounds[1][1].winner && battleGrounds[1][0].winner == battleGrounds[1][2].winner) { winner = battleGrounds[1][0].winner }
+        // Across the bottom
+        else if  (battleGrounds[2][0].winner != .empty && battleGrounds[2][0].winner == battleGrounds[2][1].winner && battleGrounds[2][0].winner == battleGrounds[2][2].winner) { winner = battleGrounds[2][0].winner }
+            
+        // Down the left
+        else if (battleGrounds[0][0].winner != .empty && battleGrounds[0][0].winner == battleGrounds[1][0].winner && battleGrounds[0][0].winner == battleGrounds[2][0].winner) { winner = battleGrounds[0][0].winner }
+        // Down the middle
+        else if (battleGrounds[0][1].winner != .empty && battleGrounds[0][1].winner == battleGrounds[1][1].winner && battleGrounds[0][1].winner == battleGrounds[2][1].winner) { winner = battleGrounds[0][1].winner }
+        // Down the right
+        else if (battleGrounds[0][2].winner != .empty && battleGrounds[0][2].winner == battleGrounds[1][2].winner && battleGrounds[0][2].winner == battleGrounds[2][2].winner) { winner = battleGrounds[0][2].winner }
+            
+        // Diagonals
+        else if (battleGrounds[0][0].winner != .empty && battleGrounds[0][0].winner == battleGrounds[1][1].winner && battleGrounds[0][0].winner == battleGrounds[2][2].winner) { winner = battleGrounds[0][0].winner }
+        else if (battleGrounds[0][2].winner != .empty && battleGrounds[0][2].winner == battleGrounds[1][1].winner && battleGrounds[0][2].winner == battleGrounds[2][0].winner) { winner = battleGrounds[0][2].winner }
+        
+        return winner
+    }
+    
+    /// This initializer creates a fresh game with 9 empty battleGrounds
     init() {
         var battleGrounds = [[BattleGround]]()
         
@@ -84,7 +109,7 @@ public class Grid {
                     battleGroundItems.append(queryItems[index])
                     index += 1
                 }
-                // Adds 3 battlegrounds to each row
+                // Adds 3 battleGrounds to each row
                 row.append(BattleGround(queryItems: battleGroundItems))
             }
             

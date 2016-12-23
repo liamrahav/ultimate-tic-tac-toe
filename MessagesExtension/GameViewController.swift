@@ -36,6 +36,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
             let mult: CGFloat = 0.025
             let minX = view.frame.width * mult
@@ -103,19 +104,19 @@ class GameViewController: UIViewController {
             
             
             // Bottom Left Tile [2][0]
-            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[1][0], currentPlayer: grid.currentPlayer)
+            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[2][0], currentPlayer: grid.currentPlayer)
             battleGround.isUserInteractionEnabled = false
             battleGround.delegate = self
             view.addSubview(battleGround)
             
             // Bottom Middle Tile [2][1]
-            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + (subRect.width / 3) + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[1][1], currentPlayer: grid.currentPlayer)
+            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + (subRect.width / 3) + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[2][1], currentPlayer: grid.currentPlayer)
             battleGround.isUserInteractionEnabled = false
             battleGround.delegate = self
             view.addSubview(battleGround)
             
             // Bottom Right Tile [2][2]
-            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + ((subRect.width / 3) * 2) + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[1][2], currentPlayer: grid.currentPlayer)
+            battleGround = BattleGroundView(frame: CGRect(x: subRect.minX + ((subRect.width / 3) * 2) + inset, y: subRect.minY + ((subRect.height / 3) * 2) + inset, width: (subRect.width / 3) - (2 * inset), height: (subRect.height / 3) - (2 * inset)), battleGround: grid.battleGrounds[2][2], currentPlayer: grid.currentPlayer)
             battleGround.isUserInteractionEnabled = false
             battleGround.delegate = self
             view.addSubview(battleGround)
