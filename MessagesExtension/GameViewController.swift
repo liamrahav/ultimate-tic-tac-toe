@@ -13,6 +13,15 @@ class GameViewController: UIViewController {
     var conversation: MSConversation
     var grid: Grid
     var needsDisplayGrid = true
+    var battleGroundViews = [[BattleGroundView?]]()
+    
+    var subRect: CGRect {
+        let mult: CGFloat = 0.025
+        let minX = view.frame.width * mult
+        let actualWidth = view.frame.width - (minX * 2)
+        let actualHeight = topLayoutGuide.length + (((view.frame.height - topLayoutGuide.length - bottomLayoutGuide.length) / 2) - (actualWidth / 2))
+        return CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
+    }
     
     init(conversation: MSConversation) {
         self.conversation = conversation
@@ -27,6 +36,13 @@ class GameViewController: UIViewController {
         
         grid = Grid(queryItems: components.queryItems!)
         
+        for i in 0 ... 2 {
+            battleGroundViews.append([BattleGroundView?]())
+            for _ in 0 ... 2 {
+                battleGroundViews[i].append(nil)
+            }
+        }
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,11 +54,7 @@ class GameViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
-            let mult: CGFloat = 0.025
-            let minX = view.frame.width * mult
-            let actualWidth = view.frame.width - (minX * 2)
-            let actualHeight = topLayoutGuide.length + (((view.frame.height - topLayoutGuide.length - bottomLayoutGuide.length) / 2) - (actualWidth / 2))
-            let subRect = CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
+            
             
             //Horizontal Lines
             drawLine(start: CGPoint(x: subRect.minX, y: (subRect.height / 3) + subRect.minY),
@@ -142,6 +154,7 @@ class GameViewController: UIViewController {
         battleGround.delegate = self
         battleGround.addGestureRecognizer(UITapGestureRecognizer(target: self, action: selector))
         view.addSubview(battleGround)
+        battleGroundViews[row][column] = battleGround
     }
     
     func upperLeftTapped() {
@@ -181,7 +194,17 @@ class GameViewController: UIViewController {
     }
     
     func tapped(row: Int, column: Int) {
-        print("ROW: \(row)\nCOLUMN: \(column)")
+        UIView.animate(withDuration: 1, animations: {
+            self.battleGroundViews[row][column]!.frame = self.subRect
+        }, completion: { finished in
+            for i in 0 ... 2 {
+                for j in 0 ... 2 {
+                    if i != row || j != column {
+                        self.battleGroundViews[i][j]!.removeFromSuperview()
+                    }
+                }
+            }
+        })
     }
     
     private func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {
