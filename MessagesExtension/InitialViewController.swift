@@ -47,7 +47,7 @@ class InitialViewController: UIViewController {
         super.updateViewConstraints()
         
         if (needsUpdateContraints) {
-            newGameButton.snp.makeConstraints { (make) -> Void in
+            newGameButton.snp.makeConstraints { make in
                 make.center.equalTo(view)
             }
             

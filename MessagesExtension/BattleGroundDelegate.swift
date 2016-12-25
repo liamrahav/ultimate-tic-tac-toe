@@ -9,5 +9,5 @@
 import Foundation
 
 protocol BattleGroundDelegate {
-    func moveMade()
+    func moveMade(row: Int, column: Int)
 }

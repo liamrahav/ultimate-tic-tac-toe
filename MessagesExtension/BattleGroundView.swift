@@ -21,6 +21,22 @@ class BattleGroundView: UIView {
         super.init(frame: frame)
         clipsToBounds = true
        
+        drawTiles()
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func drawTiles() {
+        layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
+        for view in subviews {
+            if (view as? UIImageView != nil) {
+                view.removeFromSuperview()
+            }
+        }
+        
         //Horizontal Lines
         drawLine(start: CGPoint(x: bounds.minX, y: (bounds.height / 3) + bounds.minY),
                  end: CGPoint(x: bounds.maxX - bounds.minX, y: (bounds.height / 3) + bounds.minY),
@@ -39,20 +55,6 @@ class BattleGroundView: UIView {
                  end: CGPoint(x: ((bounds.width / 3) * 2) + bounds.minX, y: bounds.maxY),
                  color: .black)
         
-        drawTiles()
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func drawTiles() {
-        for view in subviews {
-            if (view as? UIImageView != nil) {
-                view.removeFromSuperview()
-            }
-        }
         
         // Upper Left Tile [0][0]
         var view = UIImageView(image: battleGround.tiles[0][0].image)
@@ -164,7 +166,7 @@ class BattleGroundView: UIView {
             lastChoice = (row: row, column: column)
             drawTiles()
             
-            delegate?.moveMade()
+            delegate?.moveMade(row: row, column: column)
         }
     }
     

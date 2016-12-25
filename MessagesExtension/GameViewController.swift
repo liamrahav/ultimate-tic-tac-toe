@@ -10,9 +10,9 @@ import UIKit
 import Messages
 
 class GameViewController: UIViewController {
-    var conversation: MSConversation
     var grid: Grid
     var needsDisplayGrid = true
+    var needsUpdateConstraints = true
     var battleGroundViews = [[BattleGroundView?]]()
     
     var subRect: CGRect {
@@ -22,10 +22,15 @@ class GameViewController: UIViewController {
         let actualHeight = topLayoutGuide.length + (((view.frame.height - topLayoutGuide.length - bottomLayoutGuide.length) / 2) - (actualWidth / 2))
         return CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
     }
+
+    var backButton: UIButton {
+        let button = UIButton()
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        return button
+    }
     
     init(conversation: MSConversation) {
-        self.conversation = conversation
-        
         guard let url = conversation.selectedMessage!.url else {
             fatalError("invalid URL")
         }
@@ -50,30 +55,22 @@ class GameViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        backButton.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view).offset(-25)
+        }
+        view.addSubview(backButton)
+        backButton.isHidden = true
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
-            
-            
-            //Horizontal Lines
-            drawLine(start: CGPoint(x: subRect.minX, y: (subRect.height / 3) + subRect.minY),
-                     end: CGPoint(x: subRect.minX + subRect.width, y: (subRect.height / 3) + subRect.minY),
-                     color: .black)
-            
-            drawLine(start: CGPoint(x: subRect.minX, y: ((subRect.height / 3) * 2) + subRect.minY),
-                     end: CGPoint(x: subRect.minX + subRect.width, y: ((subRect.height / 3) * 2) + subRect.minY),
-                     color: .black)
-
-            //Vertial Lines
-            drawLine(start: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.minY),
-                     end: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.maxY),
-                     color: .black)
-            
-            drawLine(start: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.minY),
-                     end: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.maxY),
-                     color: .black)
-            
+            drawLines(withColor: .black)
             
             let insetMultiplier: CGFloat = 0.05
             let inset = (subRect.width / 3) * insetMultiplier
@@ -194,16 +191,25 @@ class GameViewController: UIViewController {
     }
     
     func tapped(row: Int, column: Int) {
-        UIView.animate(withDuration: 1, animations: {
-            self.battleGroundViews[row][column]!.frame = self.subRect
-        }, completion: { finished in
-            for i in 0 ... 2 {
-                for j in 0 ... 2 {
-                    if i != row || j != column {
-                        self.battleGroundViews[i][j]!.removeFromSuperview()
-                    }
+        // Remove lines
+        view.layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
+        
+        // Remove other battlegrounds
+        for i in 0 ... 2 {
+            for j in 0 ... 2 {
+                if i != row || j != column {
+                    self.battleGroundViews[i][j]!.removeFromSuperview()
                 }
             }
+        }
+
+        UIView.animate(withDuration: 1, animations: {
+            self.battleGroundViews[row][column]!.frame = self.subRect
+            self.battleGroundViews[row][column]!.drawTiles()
+        }, completion: { finished in
+            self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
+            
+            self.backButton.isHidden = false
         })
     }
     
@@ -217,14 +223,35 @@ class GameViewController: UIViewController {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = color.cgColor
+        shapeLayer.borderColor = color.cgColor
         shapeLayer.lineWidth = 2
         
-        self.view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(shapeLayer)
+    }
+    
+    func drawLines(withColor color: UIColor) {
+        //Horizontal Lines
+        drawLine(start: CGPoint(x: subRect.minX, y: (subRect.height / 3) + subRect.minY),
+                 end: CGPoint(x: subRect.minX + subRect.width, y: (subRect.height / 3) + subRect.minY),
+                 color: color)
+        
+        drawLine(start: CGPoint(x: subRect.minX, y: ((subRect.height / 3) * 2) + subRect.minY),
+                 end: CGPoint(x: subRect.minX + subRect.width, y: ((subRect.height / 3) * 2) + subRect.minY),
+                 color: color)
+        
+        //Vertial Lines
+        drawLine(start: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.minY),
+                 end: CGPoint(x: (subRect.width / 3) + subRect.minX, y: subRect.maxY),
+                 color: color)
+        
+        drawLine(start: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.minY),
+                 end: CGPoint(x: ((subRect.width / 3) * 2) + subRect.minX, y: subRect.maxY),
+                 color: color)
     }
 }
 
 extension GameViewController: BattleGroundDelegate {
-    func moveMade() {
+    func moveMade(row: Int, column: Int) {
         print("move made")
     }
 }
