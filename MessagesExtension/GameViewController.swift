@@ -22,13 +22,6 @@ class GameViewController: UIViewController {
         let actualHeight = topLayoutGuide.length + (((view.frame.height - topLayoutGuide.length - bottomLayoutGuide.length) / 2) - (actualWidth / 2))
         return CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
     }
-
-    var backButton: UIButton {
-        let button = UIButton()
-        button.setTitle("Back", for: .normal)
-        button.setTitleColor(.red, for: .normal)
-        return button
-    }
     
     init(conversation: MSConversation) {
         guard let url = conversation.selectedMessage!.url else {
@@ -53,17 +46,6 @@ class GameViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        backButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.bottom.equalTo(view).offset(-25)
-        }
-        view.addSubview(backButton)
-        backButton.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -208,8 +190,6 @@ class GameViewController: UIViewController {
             self.battleGroundViews[row][column]!.drawTiles()
         }, completion: { finished in
             self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
-            
-            self.backButton.isHidden = false
         })
     }
     
