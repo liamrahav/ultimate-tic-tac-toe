@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
         return CGRect(x: minX, y: actualHeight, width: actualWidth, height: actualWidth)
     }
     
+    
     init(conversation: MSConversation) {
         guard let url = conversation.selectedMessage!.url else {
             fatalError("invalid URL")
@@ -126,6 +127,22 @@ class GameViewController: UIViewController {
         }
     }
     
+    func addBackButton() {
+        super.viewDidLoad()
+        
+        var backButton: UIButton {
+            let offset = view.frame.height * 0.025
+            let button = UIButton(frame: CGRect(x: offset, y: topLayoutGuide.length + offset, width: 70, height: 40))
+            button.setTitle("Back", for: .normal)
+            button.setTitleColor(.blue, for: .normal)
+            button.layer.cornerRadius = 10
+            return button
+        }
+        
+        view.addSubview(backButton)
+        print("ADDED SUBVIEW OF BUTTON")
+    }
+    
     func configureBattleGround(row: Int, column: Int, frame: CGRect, selector: Selector) {
         let battleGround = BattleGroundView(frame: frame, battleGround: grid.battleGrounds[row][column], currentPlayer: grid.currentPlayer)
         battleGround.subviews.forEach { $0.isUserInteractionEnabled = false }
@@ -190,6 +207,7 @@ class GameViewController: UIViewController {
             self.battleGroundViews[row][column]!.drawTiles()
         }, completion: { finished in
             self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
+            self.addBackButton()
         })
     }
     
