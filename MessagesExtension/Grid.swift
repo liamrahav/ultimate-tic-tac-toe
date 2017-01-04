@@ -18,6 +18,9 @@ public class Grid {
     /// This array contains the 9 `BattleGround` objects in which the players can place their X's and O's.
     let battleGrounds: [[BattleGround]]
     
+    /// This tuple contains the row and column of the next battleground the player will be forced to play on, based on the last move)
+    var nextBattleground: (row: Int, column: Int)?
+    
     /// This computed property calculates which player's turn it is based on the total count of X's and O's in the game.
     var currentPlayer: Tile {
         var xCount = 0
