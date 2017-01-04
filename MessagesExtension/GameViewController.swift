@@ -250,6 +250,17 @@ class GameViewController: UIViewController {
 
 extension GameViewController: BattleGroundDelegate {
     func moveMade(row: Int, column: Int) {
-        print("move made")
+        grid.nextBattleground = (row: row, column: column)
+    }
+    
+    func sendButtonPressed() {
+        let messagesVC = parent as! MessagesViewController
+        
+        if let conversation = messagesVC.activeConversation {
+            let message = MSMessage(grid: grid, caption: "Your turn!", session: conversation.selectedMessage?.session)
+            conversation.insert(message) { error in
+                messagesVC.fillViewWithSubview(child: ErrorViewController(message: error.debugDescription))
+            }
+        }
     }
 }
