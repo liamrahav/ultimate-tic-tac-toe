@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     var needsDisplayGrid = true
     var needsUpdateConstraints = true
     var battleGroundViews = [[BattleGroundView?]]()
+    var lastFrame: CGRect?
+    var lastRow: Int?
+    var lastCol: Int?
     
     var subRect: CGRect {
         let mult: CGFloat = 0.025
@@ -25,6 +28,7 @@ class GameViewController: UIViewController {
     
     
     init(conversation: MSConversation) {
+
         guard let url = conversation.selectedMessage!.url else {
             fatalError("invalid URL")
         }
@@ -135,12 +139,36 @@ class GameViewController: UIViewController {
             let button = UIButton(frame: CGRect(x: offset, y: topLayoutGuide.length + offset, width: 70, height: 40))
             button.setTitle("Back", for: .normal)
             button.setTitleColor(.blue, for: .normal)
+            button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
             button.layer.cornerRadius = 10
             return button
         }
         
         view.addSubview(backButton)
     }
+    
+    func backButtonTapped(){
+        //var tappedOne = (self.view.subviews.filter { $0 is BattleGroundView })[0]
+        for x in 0...2{
+            for y in 0...2{
+                view.addSubview(battleGroundViews[x][y]!)
+            }
+        }
+        
+        UIView.animate(withDuration: 1, animations: {
+            self.battleGroundViews[self.lastRow!][self.lastCol!]!.frame = self.lastFrame!
+            self.view.addSubview(self.battleGroundViews[self.lastRow!][self.lastCol!]!)
+            self.battleGroundViews[self.lastRow!][self.lastCol!]!.drawTiles()
+            }, completion: { finished in
+                self.battleGroundViews[self.lastRow!][self.lastCol!]!.subviews.forEach { $0.isUserInteractionEnabled = false }
+                self.drawLines(withColor: .black)
+                
+        })
+        
+        
+        
+    }
+
     
     func configureBattleGround(row: Int, column: Int, frame: CGRect, selector: Selector) {
         let battleGround = BattleGroundView(frame: frame, battleGround: grid.battleGrounds[row][column], currentPlayer: grid.currentPlayer)
@@ -200,6 +228,10 @@ class GameViewController: UIViewController {
                 }
             }
         }
+        
+        self.lastFrame = self.battleGroundViews[row][column]!.frame
+        self.lastRow = row
+        self.lastCol = column
 
         UIView.animate(withDuration: 1, animations: {
             self.battleGroundViews[row][column]!.frame = self.subRect
