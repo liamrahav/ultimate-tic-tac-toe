@@ -140,7 +140,6 @@ class GameViewController: UIViewController {
         }
         
         view.addSubview(backButton)
-        print("ADDED SUBVIEW OF BUTTON")
     }
     
     func configureBattleGround(row: Int, column: Int, frame: CGRect, selector: Selector) {
