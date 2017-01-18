@@ -10,13 +10,12 @@ import UIKit
 import Messages
 
 extension MSMessage {
-    convenience init(grid: Grid, caption: String, session: MSSession? = nil) {
+    convenience init(grid: Grid, caption: String, image: UIImage, session: MSSession? = nil) {
         self.init(session: session ?? MSSession())
         
         var components = URLComponents()
         components.queryItems = grid.queryItems
         
-        let image = UIImage(named: "temp")!
         let messageLayout = MSMessageTemplateLayout(image: image, caption: caption)
         
         url = components.url

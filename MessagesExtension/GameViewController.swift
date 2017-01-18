@@ -302,6 +302,7 @@ extension GameViewController: BattleGroundDelegate {
     }
     
     func sendButtonPressed() {
+        backButtonTapped()
         delegate?.gameViewControllerDelegate(self, grid: grid)
     }
 }
