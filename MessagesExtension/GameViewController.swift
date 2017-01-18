@@ -13,10 +13,13 @@ class GameViewController: UIViewController {
     var grid: Grid
     var needsDisplayGrid = true
     var needsUpdateConstraints = true
+    var needsAddSendButton = true
     var battleGroundViews = [[BattleGroundView?]]()
     var lastFrame: CGRect?
     var lastRow: Int?
     var lastCol: Int?
+    
+    weak var delegate: GameViewControllerDelegate?
     
     var subRect: CGRect {
         let mult: CGFloat = 0.025
@@ -164,9 +167,6 @@ class GameViewController: UIViewController {
                 self.drawLines(withColor: .black)
                 
         })
-        
-        
-        
     }
 
     
@@ -282,16 +282,27 @@ class GameViewController: UIViewController {
 extension GameViewController: BattleGroundDelegate {
     func moveMade(row: Int, column: Int) {
         grid.nextBattleground = (row: row, column: column)
+        
+        if needsAddSendButton {
+            var sendButton: UIButton {
+                let button = UIButton(frame: CGRect(x: (view.frame.width / 2) - 35, y: ((view.frame.height - bottomLayoutGuide.length) - ((view.frame.height - bottomLayoutGuide.length) - subRect.height) / 4), width: 70, height: 40))
+                button.setTitle("Send", for: .normal)
+                button.setTitleColor(.blue, for: .normal)
+                button.layer.cornerRadius = 10
+                button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendButtonPressed)))
+                return button
+            }
+            
+            view.addSubview(sendButton)
+            needsAddSendButton = false
+        }
     }
     
     func sendButtonPressed() {
-        let messagesVC = parent as! MessagesViewController
-        
-        if let conversation = messagesVC.activeConversation {
-            let message = MSMessage(grid: grid, caption: "Your turn!", session: conversation.selectedMessage?.session)
-            conversation.insert(message) { error in
-                messagesVC.fillViewWithSubview(child: ErrorViewController(message: error.debugDescription))
-            }
-        }
+        delegate?.gameViewControllerDelegate(self, grid: grid)
     }
+}
+
+protocol GameViewControllerDelegate: class {
+    func gameViewControllerDelegate(_ controller: GameViewController, grid: Grid)
 }

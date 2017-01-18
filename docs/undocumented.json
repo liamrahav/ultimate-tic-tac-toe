@@ -36,6 +36,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/GameViewController.swift",
+      "line": 306,
+      "symbol": "GameViewControllerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/InitialViewController.swift",
       "line": 12,
       "symbol": "InitialViewController",
@@ -47,6 +54,13 @@
       "line": 13,
       "symbol": "MSMessage.init(grid:caption:session:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/macbook/Documents/Github/ultimate-tic-tac-toe/MessagesExtension/MessagesViewController.swift",
+      "line": null,
+      "symbol": "MessagesViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {

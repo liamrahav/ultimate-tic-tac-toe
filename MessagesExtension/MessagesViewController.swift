@@ -76,6 +76,17 @@ class MessagesViewController: MSMessagesAppViewController {
     
     func instantiateGameViewController(conversation: MSConversation) -> UIViewController {
         let controller = GameViewController(conversation: conversation)
+        controller.delegate = self
         return controller
+    }
+}
+
+extension MessagesViewController: GameViewControllerDelegate {
+    func gameViewControllerDelegate(_ controller: GameViewController, grid: Grid) {
+        guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+        let message = MSMessage(grid: grid, caption: "Your turn!", session: conversation.selectedMessage?.session)
+        
+        conversation.insert(message)
+        dismiss()
     }
 }

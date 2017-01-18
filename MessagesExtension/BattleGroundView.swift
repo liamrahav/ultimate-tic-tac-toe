@@ -9,7 +9,7 @@
 import UIKit
 
 class BattleGroundView: UIView {
-    let battleGround: BattleGround
+    let battleGround: BattleGround    
     let currentPlayer: Tile
     var delegate: BattleGroundDelegate?
     var lastChoice: (row: Int, column: Int)?
