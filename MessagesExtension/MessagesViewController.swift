@@ -39,7 +39,6 @@ class MessagesViewController: MSMessagesAppViewController {
         if (presentationStyle == .compact) {
             controller = instantiateInitialViewController()
         } else {
-            // TODO: - Show the actual game screen
             controller = instantiateGameViewController(conversation: conversation)
         }
         
@@ -71,6 +70,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
     func instantiateInitialViewController() -> UIViewController {
         let controller = InitialViewController()
+        controller.delegate = self
         return controller
     }
     
@@ -78,6 +78,12 @@ class MessagesViewController: MSMessagesAppViewController {
         let controller = GameViewController(conversation: conversation)
         controller.delegate = self
         return controller
+    }
+}
+
+extension MessagesViewController: InitialViewControllerDelegate {
+    func initialViewControllerDelegate(_ controller: InitialViewController) {
+        requestPresentationStyle(.expanded)
     }
 }
 

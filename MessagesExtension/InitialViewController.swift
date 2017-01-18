@@ -10,8 +10,17 @@ import UIKit
 import Messages
 
 class InitialViewController: UIViewController {
-
     var needsUpdateContraints = true
+    
+    weak var delegate: InitialViewControllerDelegate?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
     
     let newGameButton: UIButton = {
         let button = UIButton(type: .roundedRect)
@@ -32,15 +41,7 @@ class InitialViewController: UIViewController {
     }
     
     func startGame() {
-        let messagesVC = parent as! MessagesViewController
-        if let conversation = messagesVC.activeConversation {
-            let message = MSMessage(grid: Grid(), caption: "Your turn!", session: conversation.selectedMessage?.session)
-            conversation.insert(message) { error in
-                messagesVC.fillViewWithSubview(child: ErrorViewController(message: error.debugDescription))
-            }
-        } else {
-            messagesVC.fillViewWithSubview(child: ErrorViewController(message: "Expected an active conversation"))
-        }
+        delegate?.initialViewControllerDelegate(self)
     }
     
     override func updateViewConstraints() {
@@ -54,4 +55,8 @@ class InitialViewController: UIViewController {
             needsUpdateContraints = false
         }
     }
+}
+
+protocol InitialViewControllerDelegate: class {
+    func initialViewControllerDelegate(_ controller: InitialViewController)
 }

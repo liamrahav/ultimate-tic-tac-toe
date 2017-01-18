@@ -31,16 +31,19 @@ class GameViewController: UIViewController {
     
     
     init(conversation: MSConversation) {
-
-        guard let url = conversation.selectedMessage!.url else {
-            fatalError("invalid URL")
+        if conversation.selectedMessage != nil {
+            guard let url = conversation.selectedMessage!.url else {
+                fatalError("invalid URL")
+            }
+            
+            guard let components = NSURLComponents(string: url.absoluteString) else {
+                fatalError("Invalid base url")
+            }
+            
+            grid = Grid(queryItems: components.queryItems!)
+        } else {
+            grid = Grid()
         }
-        
-        guard let components = NSURLComponents(string: url.absoluteString) else {
-            fatalError("Invalid base url")
-        }
-        
-        grid = Grid(queryItems: components.queryItems!)
         
         for i in 0 ... 2 {
             battleGroundViews.append([BattleGroundView?]())
