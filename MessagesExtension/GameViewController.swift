@@ -153,7 +153,7 @@ class GameViewController: UIViewController {
         view.addSubview(backButton)
     }
     
-    func backButtonTapped(){
+    func backButtonTapped(completionHandler: (() -> Void)!){
         //var tappedOne = (self.view.subviews.filter { $0 is BattleGroundView })[0]
         for x in 0...2{
             for y in 0...2{
@@ -168,7 +168,7 @@ class GameViewController: UIViewController {
             }, completion: { finished in
                 self.battleGroundViews[self.lastRow!][self.lastCol!]!.subviews.forEach { $0.isUserInteractionEnabled = false }
                 self.drawLines(withColor: .black)
-                
+                completionHandler()
         })
     }
 
@@ -302,8 +302,9 @@ extension GameViewController: BattleGroundDelegate {
     }
     
     func sendButtonPressed() {
-        backButtonTapped()
-        delegate?.gameViewControllerDelegate(self, grid: grid)
+        backButtonTapped() {
+            self.delegate?.gameViewControllerDelegate(self, grid: self.grid)
+        }
     }
 }
 
