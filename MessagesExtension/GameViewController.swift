@@ -315,9 +315,15 @@ extension GameViewController: BattleGroundDelegate {
     }
     
     func sendButtonPressed() {
-        zoomOut(completionHandler: {
-            self.delegate?.gameViewControllerDelegate(self, grid: self.grid)
-        })
+        if grid.winner == nil {
+            zoomOut(completionHandler: {
+                self.delegate?.gameViewControllerDelegate(self, grid: self.grid)
+            })
+        } else {
+            zoomOut(completionHandler: {
+                print("WINNER! THE WINNER IS \(self.grid.winner!)")
+            })
+        }
     }
 }
 
