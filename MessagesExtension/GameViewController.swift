@@ -220,29 +220,33 @@ class GameViewController: UIViewController {
     }
     
     func tapped(row: Int, column: Int) {
-        // Remove lines
-        view.layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
-        
-        // Remove other battlegrounds
-        for i in 0 ... 2 {
-            for j in 0 ... 2 {
-                if i != row || j != column {
-                    self.battleGroundViews[i][j]!.removeFromSuperview()
+        // Use that short-circuit
+        print("GRID NEXT BATTLEGROIND: \(grid.nextBattleground)")
+        if grid.nextBattleground == nil || (grid.nextBattleground?.row == row && grid.nextBattleground?.column == column) {
+            // Remove lines
+            view.layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
+            
+            // Remove other battlegrounds
+            for i in 0 ... 2 {
+                for j in 0 ... 2 {
+                    if i != row || j != column {
+                        self.battleGroundViews[i][j]!.removeFromSuperview()
+                    }
                 }
             }
-        }
-        
-        self.lastFrame = self.battleGroundViews[row][column]!.frame
-        self.lastRow = row
-        self.lastCol = column
+            
+            self.lastFrame = self.battleGroundViews[row][column]!.frame
+            self.lastRow = row
+            self.lastCol = column
 
-        UIView.animate(withDuration: 1, animations: {
-            self.battleGroundViews[row][column]!.frame = self.subRect
-            self.battleGroundViews[row][column]!.drawTiles()
-        }, completion: { finished in
-            self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
-            self.addBackButton()
-        })
+            UIView.animate(withDuration: 1, animations: {
+                self.battleGroundViews[row][column]!.frame = self.subRect
+                self.battleGroundViews[row][column]!.drawTiles()
+            }, completion: { finished in
+                self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
+                self.addBackButton()
+            })
+        }
     }
     
     private func drawLine(start: CGPoint, end: CGPoint, color: UIColor) {

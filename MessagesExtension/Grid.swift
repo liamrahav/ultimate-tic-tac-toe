@@ -53,6 +53,14 @@ public class Grid {
             }
         }
         
+        if (nextBattleground != nil) {
+            items.append(URLQueryItem(name: "nextRow", value: String(describing: nextBattleground!.row)))
+            items.append(URLQueryItem(name: "nextColumn", value: String(describing: nextBattleground!.column)))
+        } else {
+            items.append(URLQueryItem(name: "nextRow", value: nil))
+            items.append(URLQueryItem(name: "nextColumn", value: nil))
+        }
+        
         return items
     }
     
@@ -117,6 +125,12 @@ public class Grid {
             }
             
             battleGrounds.append(row)
+        }
+        
+        print("ELECTIRC BOGALO \(queryItems[index].value)")
+        print("PAET 2 \(queryItems[index + 1].value)")
+        if (queryItems[index].value != nil && queryItems[index + 1].value != nil) {
+            nextBattleground = (Int(queryItems[index].value!)!, Int(queryItems[index + 1].value!)!)
         }
         
         self.battleGrounds = battleGrounds
