@@ -127,8 +127,6 @@ public class Grid {
             battleGrounds.append(row)
         }
         
-        print("ELECTIRC BOGALO \(queryItems[index].value)")
-        print("PAET 2 \(queryItems[index + 1].value)")
         if (queryItems[index].value != nil && queryItems[index + 1].value != nil) {
             nextBattleground = (Int(queryItems[index].value!)!, Int(queryItems[index + 1].value!)!)
         }

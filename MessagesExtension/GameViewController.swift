@@ -153,7 +153,11 @@ class GameViewController: UIViewController {
         view.addSubview(backButton)
     }
     
-    func backButtonTapped(completionHandler: (() -> Void)!){
+    func backButtonTapped() {
+        zoomOut(completionHandler: nil)
+    }
+    
+    func zoomOut(completionHandler: (() -> Void)?){
         //var tappedOne = (self.view.subviews.filter { $0 is BattleGroundView })[0]
         for x in 0...2{
             for y in 0...2{
@@ -168,7 +172,9 @@ class GameViewController: UIViewController {
             }, completion: { finished in
                 self.battleGroundViews[self.lastRow!][self.lastCol!]!.subviews.forEach { $0.isUserInteractionEnabled = false }
                 self.drawLines(withColor: .black)
-                completionHandler()
+                if completionHandler != nil {
+                    completionHandler!()
+                }
         })
     }
 
@@ -221,8 +227,7 @@ class GameViewController: UIViewController {
     
     func tapped(row: Int, column: Int) {
         // Use that short-circuit
-        print("GRID NEXT BATTLEGROIND: \(grid.nextBattleground)")
-        if grid.nextBattleground == nil || (grid.nextBattleground?.row == row && grid.nextBattleground?.column == column) {
+        if grid.battleGrounds[row][column].winner == nil && (grid.nextBattleground == nil || (grid.nextBattleground?.row == row && grid.nextBattleground?.column == column)) {
             // Remove lines
             view.layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
             
@@ -288,7 +293,11 @@ class GameViewController: UIViewController {
 
 extension GameViewController: BattleGroundDelegate {
     func moveMade(row: Int, column: Int) {
-        grid.nextBattleground = (row: row, column: column)
+        if (grid.battleGrounds[row][column].winner == nil) {
+            grid.nextBattleground = (row: row, column: column)
+        } else {
+            grid.nextBattleground = nil
+        }
         
         if needsAddSendButton {
             var sendButton: UIButton {
@@ -306,9 +315,9 @@ extension GameViewController: BattleGroundDelegate {
     }
     
     func sendButtonPressed() {
-        backButtonTapped() {
+        zoomOut(completionHandler: {
             self.delegate?.gameViewControllerDelegate(self, grid: self.grid)
-        }
+        })
     }
 }
 
