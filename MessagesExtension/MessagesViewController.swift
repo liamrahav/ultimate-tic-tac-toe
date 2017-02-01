@@ -124,7 +124,15 @@ extension MessagesViewController: GameViewControllerDelegate {
         // Create a new image based on the imageRef and rotate back to the original orientation
         image = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
         
-        let message = MSMessage(grid: grid, caption: "Your turn!", image: image, session: conversation.selectedMessage?.session)
+        var messageString = ""
+        
+        if grid.winner != nil {
+            messageString = (grid.winner?.queryItem.value)!.uppercased() + " won!"
+        } else {
+            messageString = "Your turn!"
+        }
+        
+        let message = MSMessage(grid: grid, caption: messageString, image: image, session: conversation.selectedMessage?.session)
         
         conversation.insert(message)
         dismiss()

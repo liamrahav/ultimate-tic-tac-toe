@@ -321,7 +321,18 @@ extension GameViewController: BattleGroundDelegate {
             })
         } else {
             zoomOut(completionHandler: {
-                print("WINNER! THE WINNER IS \(self.grid.winner!)")
+                self.view.layer.sublayers?.forEach { if $0 is CAShapeLayer { $0.removeFromSuperlayer() }}
+                for row in self.battleGroundViews {
+                    for view in row {
+                        view?.removeFromSuperview()
+                    }
+                }
+                
+                let view = UIImageView(frame: self.subRect)
+                view.image = UIImage(named: (self.grid.winner?.queryItem.value)!)
+                self.view.addSubview(view)
+                
+                self.delegate?.gameViewControllerDelegate(self, grid: self.grid)
             })
         }
     }
