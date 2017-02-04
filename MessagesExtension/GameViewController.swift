@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
     }
     
     
+    
     init(conversation: MSConversation) {
         if conversation.selectedMessage != nil {
             guard let url = conversation.selectedMessage!.url else {
@@ -52,6 +53,25 @@ class GameViewController: UIViewController {
             }
         }
         
+        grid.battleGrounds[0][0].tiles[0][0] = .x
+        grid.battleGrounds[0][0].tiles[1][0] = .x
+        grid.battleGrounds[0][0].tiles[2][0] = .x
+        grid.battleGrounds[1][0].tiles[0][0] = .x
+        grid.battleGrounds[1][0].tiles[1][0] = .x
+        grid.battleGrounds[1][0].tiles[2][0] = .x
+        grid.battleGrounds[2][0].tiles[0][0] = .x
+        grid.battleGrounds[2][0].tiles[1][0] = .x
+        grid.battleGrounds[0][1].tiles[0][0] = .o
+        grid.battleGrounds[0][1].tiles[1][0] = .o
+        grid.battleGrounds[0][1].tiles[2][0] = .o
+        grid.battleGrounds[1][1].tiles[0][0] = .o
+        grid.battleGrounds[1][1].tiles[1][0] = .o
+        grid.battleGrounds[1][1].tiles[2][0] = .o
+        grid.battleGrounds[2][1].tiles[0][0] = .o
+        grid.battleGrounds[2][1].tiles[1][0] = .o
+        
+        
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -60,6 +80,8 @@ class GameViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        
+        
         super.viewDidLayoutSubviews()
         
         if (topLayoutGuide.length > 0 && needsDisplayGrid) {
@@ -168,7 +190,7 @@ class GameViewController: UIViewController {
         UIView.animate(withDuration: 1, animations: {
             self.battleGroundViews[self.lastRow!][self.lastCol!]!.frame = self.lastFrame!
             self.view.addSubview(self.battleGroundViews[self.lastRow!][self.lastCol!]!)
-            self.battleGroundViews[self.lastRow!][self.lastCol!]!.drawTiles()
+            self.battleGroundViews[self.lastRow!][self.lastCol!]!.drawTilesBattleGroundView()
             }, completion: { finished in
                 self.battleGroundViews[self.lastRow!][self.lastCol!]!.subviews.forEach { $0.isUserInteractionEnabled = false }
                 self.drawLines(withColor: .black)
@@ -246,7 +268,7 @@ class GameViewController: UIViewController {
 
             UIView.animate(withDuration: 1, animations: {
                 self.battleGroundViews[row][column]!.frame = self.subRect
-                self.battleGroundViews[row][column]!.drawTiles()
+                self.battleGroundViews[row][column]!.drawTilesBattleGroundView()
             }, completion: { finished in
                 self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
                 self.addBackButton()
