@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     var lastFrame: CGRect?
     var lastRow: Int?
     var lastCol: Int?
+    var lastCenterPoint: CGPoint?
     
     weak var delegate: GameViewControllerDelegate?
     
@@ -187,13 +188,14 @@ class GameViewController: UIViewController {
             }
         }
         
-        UIView.animate(withDuration: 1, animations: {
-            self.battleGroundViews[self.lastRow!][self.lastCol!]!.frame = self.lastFrame!
+        UIView.animate(withDuration: 0.75, animations: {
+            self.battleGroundViews[self.lastRow!][self.lastCol!]!.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.battleGroundViews[self.lastRow!][self.lastCol!]!.center = self.lastCenterPoint!
             self.view.addSubview(self.battleGroundViews[self.lastRow!][self.lastCol!]!)
-            self.battleGroundViews[self.lastRow!][self.lastCol!]!.drawTilesBattleGroundView()
+            self.drawLines(withColor: .black)
+//            self.battleGroundViews[self.lastRow!][self.lastCol!]!.drawTilesBattleGroundView()
             }, completion: { finished in
                 self.battleGroundViews[self.lastRow!][self.lastCol!]!.subviews.forEach { $0.isUserInteractionEnabled = false }
-                self.drawLines(withColor: .black)
                 if completionHandler != nil {
                     completionHandler!()
                 }
@@ -266,9 +268,12 @@ class GameViewController: UIViewController {
             self.lastRow = row
             self.lastCol = column
 
-            UIView.animate(withDuration: 1, animations: {
-                self.battleGroundViews[row][column]!.frame = self.subRect
-                self.battleGroundViews[row][column]!.drawTilesBattleGroundView()
+            UIView.animate(withDuration: 0.75, animations: {
+                let scale = self.subRect.width / self.battleGroundViews[self.lastRow!][self.lastCol!]!.frame.width
+                self.battleGroundViews[self.lastRow!][self.lastCol!]!.transform = CGAffineTransform(scaleX: scale, y: scale)
+                self.lastCenterPoint = self.battleGroundViews[self.lastRow!][self.lastCol!]!.center
+                self.battleGroundViews[self.lastRow!][self.lastCol!]!.center = CGPoint(x: (self.subRect.maxX + self.subRect.minX) / 2, y: (self.subRect.maxY + self.subRect.minY) / 2)
+                //                self.battleGroundViews[row][column]!.drawTilesBattleGroundView()
             }, completion: { finished in
                 self.battleGroundViews[row][column]!.subviews.forEach { $0.isUserInteractionEnabled = true }
                 self.addBackButton()
